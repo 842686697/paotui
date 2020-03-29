@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/logs/logs",
     "pages/user/user"
   ],
@@ -12,7 +11,7 @@
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/logs/logs",
       "text": "主页"
     },
     {
