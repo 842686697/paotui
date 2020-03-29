@@ -1,0 +1,16 @@
+<view class="user_top_box clearfix">
+  <view class="user_icon_box">
+    <image wx:if="{{!user.hasLogin}}" class="user_icon" src="{{user.unloginIcon}}" bindtap="getUserInfo"></image>
+    <image wx:else class="user_icon" src="{{user.loginIcon}}" ></image>
+  </view>
+  <view class="user_info">
+    <block wx:if="{{!user.hasLogin}}" class="user_info_false">登陆后获取信息</block>
+    <block wx:else>
+    <view class="user_info_true">你好,{{user.userInfo.nickName}}</view>
+    <view class="user_info_true">信用:{{}}</view>
+    <view class="user_info_true">购买次数:{{}}</view>
+    </block>
+  </view>
+</view>
+<view class="user_bot">账单记录</view>
+<view class="user_bot">设置</view>
