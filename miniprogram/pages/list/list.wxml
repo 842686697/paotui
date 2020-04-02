@@ -1,0 +1,6 @@
+<view class="mian_search">
+<input></input>
+</view>
+<view wx:for="{{list}}" wx:key="name" class="main_list">
+  {{item.title}}
+</view>
