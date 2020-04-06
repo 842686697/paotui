@@ -1,1 +1,72 @@
-/* pages/user/user.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background: #F0F0F0;
+}
+.top_box{
+  height: 250rpx;
+  width: 100%;
+  background:linear-gradient(to bottom right,rgb(0, 174, 255), rgb(0, 255, 157));
+}
+.float-{
+  float: left;
+}
+.clearfix::after,.clearfix::before{
+  content: "";
+  display: table;
+}
+.clearfix::after{
+  clear:both;
+  overflow: hidden;
+}
+.title_box{
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+}
+.user_box{
+  height: 170rpx;
+  width: 100%;
+}
+.user_icon_box{
+  height: 170rpx;
+  width: 60%;
+  padding: 0 0 40rpx 40rpx;
+  box-sizing: border-box;
+}
+.user_message_box{
+  height:100%;
+  width:40%; 
+  box-sizing: border-box;
+  padding-left: 80rpx;
+}
+.user_icon{
+  margin-top: 20rpx;
+  width: 130rpx;
+  height: 130rpx;
+}
+.user_name{
+  box-sizing: border-box;
+  padding-left:50rpx; 
+  line-height: 170rpx;
+  width: 60%;
+  color: white;
+}
+.user_message{
+  margin:25rpx 0 0 0; 
+  font-size: 30rpx;
+  color: white;
+}
+.setting{
+  font-size: 30rpx;
+  height: 95rpx;
+  width: 100%;
+  background: white;
+  margin: 0 0 30rpx 0;
+  padding-left: 80rpx;
+  line-height: 95rpx;
+  box-sizing: border-box;
+}
