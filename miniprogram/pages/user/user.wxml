@@ -1,0 +1,13 @@
+<view>
+  <view>个人中心</view>
+  <view>
+    <view>
+      <image></image>
+      <view></view>
+    </view>
+    <view>
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+</view>
