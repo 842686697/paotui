@@ -1,1 +1,73 @@
 /* pages/message/message.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.messages{
+  height: 140rpx;
+  width: 1000rpx;
+  background-color: white;
+  float: left;
+  margin-top: 10rpx;
+  box-shadow: 0px 1px 5px darkgray;
+
+}
+.icon{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
+  margin-top: 7rpx;
+  margin-left: 7rpx;
+  top: 2rpx;
+  float: left;
+}
+.username{
+  height: 50rpx;
+  width: 250rpx;
+  position: relative;
+  float: left;
+  left: 20rpx;
+  top: 20rpx;
+  color: darkgray;
+}
+.chat_record{
+  height: 40rpx;
+  width: 380rpx;
+  position: relative;
+  float: left;
+  top: 70rpx;
+  left: -234rpx;
+  color: darkgray;
+}
+.more{
+  height: 30rpx;
+  width: 80rpx;
+  border: 1px solid black;
+  margin-left: 660rpx;
+  margin-top: 5rpx;
+}
+.last_chattime{
+  height: 30rpx;
+  width: 100rpx;
+  margin-left: 640rpx;
+  margin-top: 5rpx;
+  font-size: 26rpx;
+  color: darkgray;
+}
+.unread{
+  height: 35rpx;
+  width: 35rpx;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 690rpx;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: white;
+  opacity: 0.5;
+}
+.unread:hover{
+  display: none;
+}

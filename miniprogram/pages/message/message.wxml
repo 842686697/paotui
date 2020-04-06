@@ -1,3 +1,20 @@
-<view style="border:1px solid black">
-
+<view class="messages">
+<view class="icon"></view>
+  <view class="username"><text>任俊峰</text>
+  </view>
+  <view class="chat_record"><text>wdnmdwdnmd</text>
+  </view>
+  <view class="more"></view>
+  <view class="last_chattime">10：20</view>
+  <view class="unread"><text>7</text></view>
+</view>
+<view class="messages">
+<view class="icon"></view>
+  <view class="username"><text>任俊峰</text>
+  </view>
+  <view class="chat_record"><text>wdnmdwdnmd</text>
+  </view>
+  <view class="more"></view>
+  <view class="last_chattime">10：20</view>
+  <view class="unread"><text>7</text></view>
 </view>
