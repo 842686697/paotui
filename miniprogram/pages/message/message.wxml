@@ -1,2 +1,3 @@
-<!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<view style="border:1px solid black">
+
+</view>

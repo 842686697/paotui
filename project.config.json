@@ -69,6 +69,12 @@
 					"name": "pages/list/list",
 					"pathName": "pages/list/list",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/message/message",
+					"pathName": "pages/message/message",
+					"scene": null
 				}
 			]
 		}
