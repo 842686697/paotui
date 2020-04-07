@@ -52,8 +52,7 @@ page{
 }
 .user_name{
   box-sizing: border-box;
-  padding-left:50rpx; 
-  line-height: 170rpx;
+  padding:25rpx 0 0 50rpx; 
   width: 60%;
   color: white;
   font-size: 35rpx;
