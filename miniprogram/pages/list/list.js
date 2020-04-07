@@ -1,9 +1,12 @@
-
+const app=getApp();
 Page({
   data: {
     list:[],
     collection:'list',
     groupId:'',
+    resizeIndex:2,
+    unLoginIcon:'/images/unloginIcon.png',
+    hasLoad:false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -19,6 +22,11 @@ Page({
           list: res.data
         })
       }
+    })
+  },
+  resize:function(e){
+    this.setData({
+      resizeIndex: e.currentTarget.dataset.index
     })
   },
   onLoad: function (options) {

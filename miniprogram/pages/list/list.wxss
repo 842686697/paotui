@@ -1,6 +1,48 @@
-.main_list{
+page{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(211, 211, 211, 0.322)
+}
+.float-{
+  float: left;
+}
+.clearfix::after,.clearfix::before{
+  content: "";
+  display: table;
+}
+.clearfix::after{
+  clear:both;
+  overflow: hidden;
+}
+.list_box{
   margin: 30rpx;
-  height: 130rpx;
+  height: 150rpx;
   width: 90%;
   background: lightgray;
+  border-radius: 10rpx;
+}
+.list_search_box{
+
+}
+.list_search{
+  margin: 20rpx 0 0 30rpx; 
+  height: 50rpx;
+  width: 70%;
+  border-radius: 10rpx;
+  background:white; 
+  font-size: 30rpx;
+}
+.list_searchImg{
+  height: 64rpx;
+  width: 64rpx;
+  margin:15rpx 0 0 15rpx; 
+}
+.list_icon{
+  padding: 20rpx 0 0 20rpx;
+  height: 120rpx;
+  width: 120rpx;
+}
+.list_message{
+  margin-left: 150rpx;
+  line-height: 75rpx;
 }

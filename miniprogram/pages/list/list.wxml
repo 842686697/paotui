@@ -1,6 +1,13 @@
 <my-search back="true" >
 </my-search>
-<input></input>
-<view wx:for="{{list}}" wx:key="name" class="main_list">
-  {{item.title}}
+<view class="list_search_box clearfix">
+  <input class="list_search float-" placeholder="搜索"></input>
+  <image class="list_searchImg float-" src="./search.png"></image>
+</view>
+<view wx:for="{{list}}" data-index="{{index}}" class="list_box" bindtap="resize">
+  <image class="list_icon float-" src="{{hasLoad?icon:unLoginIcon}}"></image>
+  <view>
+    <view class="list_message">{{item.date}}</view>
+    <view class="list_message">{{item.title}}</view>
+  </view>
 </view>
