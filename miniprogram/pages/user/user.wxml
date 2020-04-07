@@ -6,7 +6,7 @@
       <image src="{{hasLogin?icon:unLoginIcon}}" class="user_icon float-"></image>
       <block>
         <button style="height:80rpx;width:200rpx;" class="user_button" open-type="getUserInfo" bindgetuserinfo="register" wx:if="{{!hasLogin}}" bindtap="">登陆</button>
-        <view class="user_name float-" wx:else>XXXXXX</view>
+        <view class="user_name float-" wx:else>{{nickName}}</view>
       </block>
     </view>
     <view class="user_message_box float-">
