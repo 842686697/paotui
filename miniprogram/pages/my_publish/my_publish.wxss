@@ -1,0 +1,98 @@
+/* miniprogram/pages/my_publish/my_publish.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.little_point{
+  height: 12rpx;
+  width: 12rpx;
+  float: left;
+  margin-left: 12rpx;
+  position: relative;
+  top: 8rpx;
+  border-radius: 50%;
+  background-color: darkgray;
+}
+.more{
+  height: 30rpx;
+  width: 80rpx;
+  margin-left: 610rpx;
+  margin-top: 5rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid darkgray;
+  box-shadow: 4rpx 2rpx 2rpx darkgray;
+}
+.tags{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  float: left;
+  color: white;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: rgb(40, 230, 125);
+  font-size: 35rpx;
+}
+.mine{
+  height: 140rpx;
+  width: 700rpx;
+  margin-top: 20rpx;
+  margin-left: 22rpx;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px darkgray;
+  border-top: 1rpx solid darkgray;
+  border-left: 1rpx solid darkgray;
+}
+.username{
+  height: 50rpx;
+  width: 250rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: darkgray;
+}
+.date{
+  height: 30rpx;
+  width: 80rpx;
+  float: left;
+  margin-left: 610rpx;
+  margin-top: -80rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-bottom-left-radius: 40rpx;
+  border-top-left-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  color: darkgray;
+  font-size: 25rpx;
+
+
+}
+.detials{
+  height: 40rpx;
+  width: 400rpx;
+  color: darkgray;
+  float: left;
+  margin-left: 154rpx;
+  position: relative;
+  top: -50rpx;
+  overflow: hidden;
+  line-height: 40rpx;
+}
+.finish_time{
+  height: 30rpx;
+  width: 80rpx;
+  float: left;
+  color: darkgray;
+  margin-top: -40rpx;
+  margin-left: 54rpx;
+  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 24rpx;
+}
