@@ -2,10 +2,5 @@
   margin: 30rpx;
   height: 130rpx;
   width: 90%;
-  background-color: lightgray;
-}
-.mian_search{
-  height:150rpx;
-  width: 100%;
-  background-color: lightcyan;
+  background: lightgray;
 }

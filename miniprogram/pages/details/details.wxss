@@ -1,0 +1,76 @@
+/* miniprogram/pages/details/details.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.details{
+  height:100%;
+  width: 100%;
+}
+.icon{
+  height: 120rpx;
+  width: 120rpx;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  float: left;
+}
+.date{
+  height: 45rpx;
+  width: 120rpx;
+  float: left;
+  margin-top: 105rpx;
+  margin-left: -174rpx;
+  color: darkgray;
+  text-align: center;
+  border-radius: 15rpx;
+  background-color: deepskyblue;
+}
+.username{
+  height: 65rpx;
+  width: 300rpx;
+  float: left;
+  margin-top: 35rpx;
+  margin-left: 10rpx;
+  line-height: 65rpx;font-size: 40rpx;
+  color: #00ff95b9;
+}
+.content{
+  width: 590rpx;
+  height: auto;
+  margin-top: 180rpx;
+  margin-left: 80rpx;
+  color: darkgray;
+  word-wrap:break-word; 
+  word-break:break-all;
+}
+.tags{
+  height: 45rpx;
+  width: 120rpx;
+  float: left;
+  margin-top: 105rpx;
+  margin-left: -304rpx;
+  text-align: center;
+  color: darkgray;
+  border-radius: 15rpx;
+  background-color: darkseagreen;
+}
+.reply{
+    height: 80rpx;
+    width: 120rpx;
+    float: left;
+    position: relative;
+    margin-top: 10rpx;
+    
+    text-align: center;
+    left: 26%;
+    border-bottom-left-radius: 40rpx;
+    border-top-left-radius: 40rpx;
+    border-bottom-right-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+    background-color: #00ff95f6;
+    line-height: 50rpx;
+    color: white;
+    font-size: 36rpx;
+}

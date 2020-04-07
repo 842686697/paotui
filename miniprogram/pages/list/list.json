@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-search":"/components/search/search"
+  },
+  "navigationStyle":"custom",
   "enablePullDownRefresh": true
 }

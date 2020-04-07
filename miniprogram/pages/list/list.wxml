@@ -1,6 +1,6 @@
-<view class="mian_search">
+<my-search back="true" >
 <input></input>
-</view>
+</my-search>
 <view wx:for="{{list}}" wx:key="name" class="main_list">
   {{item.title}}
 </view>

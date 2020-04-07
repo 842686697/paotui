@@ -1,0 +1,10 @@
+.nav_top{
+  text-align: center;
+  box-sizing: border-box;
+  height:180rpx;
+  padding-top: 30rpx;
+  line-height: 180rpx;
+  width: 100%;
+  color:white;
+  background: rgb(0, 174, 255);
+}
