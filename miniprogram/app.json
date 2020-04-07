@@ -16,7 +16,8 @@
     "pages/list/list",
     "pages/user/user",
     "pages/message/message",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/publish/publish"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -28,17 +29,19 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/list/list",
-      "text": "主页"
-    },
-    {
-      "pagePath": "pages/message/message",
-      "text": "信息"
-    },
-    {
-      "pagePath": "pages/user/user",
-      "text": "个人"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "信息"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人"
+      }
+    ]
   }
 }

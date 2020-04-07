@@ -50,6 +50,7 @@ page{
   border: 1px solid black;
   margin-left: 640rpx;
   margin-top: 5rpx;
+  border-radius: 30rpx;
 }
 .last_chattime{
   height: 30rpx;
@@ -70,6 +71,17 @@ page{
   text-align: center;
   color: white;
   opacity: 0.5;
+}
+.little_point{
+  height: 12rpx;
+  width: 12rpx;
+  float: left;
+  margin-left: 9rpx;
+  position: relative;
+  top: -26rpx;
+  border-radius: 50%;
+  background-color: darkgray;
+  border: 1px solid black;
 }
 .unread:hover{
   display: none;

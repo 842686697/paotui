@@ -62,7 +62,6 @@ page{
     float: left;
     position: relative;
     margin-top: 10rpx;
-    
     text-align: center;
     left: 26%;
     border-bottom-left-radius: 40rpx;

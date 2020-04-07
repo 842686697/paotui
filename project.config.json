@@ -68,12 +68,27 @@
 					"id": -1,
 					"name": "pages/list/list",
 					"pathName": "pages/list/list",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/message/message",
 					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/details/detials",
+					"pathName": "pages/details/detials",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/details/details",
+					"pathName": "pages/details/details",
 					"scene": null
 				}
 			]

@@ -5,7 +5,10 @@
   </view>
   <view class="chat_record"><text>wdnmdwdnmd</text>
   </view>
-  <view class="more"></view>
+  <view class="more">
+  <view class="little_point"></view>
+  <view class="little_point"></view>
+  <view class="little_point"></view></view>
   <view class="last_chattime">10：20</view>
   <view class="unread"><text>7</text></view>
 </view>
@@ -15,7 +18,11 @@
   </view>
   <view class="chat_record"><text>wdnmdwdnmd</text>
   </view>
-  <view class="more"></view>
+  <view class="more">
+  <view class="little_point"></view>
+  <view class="little_point"></view>
+  <view class="little_point"></view>
+  </view>
   <view class="last_chattime">10：20</view>
   <view class="unread"><text>7</text></view>
 </view>
