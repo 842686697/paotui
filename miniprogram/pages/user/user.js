@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    nickName:String,
     icon:String,
     unLoginIcon:'/images/unloginIcon.png',
     hasLogin:false,
@@ -20,7 +21,8 @@ Page({
       this.setData({
         hasLogin: true,
         icon: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
+        userInfo: e.detail.userInfo,
+        nickName:e.detail.userInfo.nickName
       })
     }
   },
@@ -41,7 +43,8 @@ Page({
               this.setData({
                 userInfo:res.userInfo,
                 icon:res.userInfo.avatarUrl,
-                hasLogin:true
+                hasLogin:true,
+                nickName:res.userInfo.nickName
               })
             }
           })

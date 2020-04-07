@@ -35,7 +35,7 @@ page{
 .user_icon_box{
   height: 170rpx;
   width: 60%;
-  padding: 0 0 40rpx 40rpx;
+  padding-left: 40rpx;
   box-sizing: border-box;
 }
 .user_message_box{
@@ -46,8 +46,9 @@ page{
 }
 .user_icon{
   margin-top: 20rpx;
-  width: 130rpx;
-  height: 130rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
 }
 .user_name{
   box-sizing: border-box;
@@ -55,6 +56,7 @@ page{
   line-height: 170rpx;
   width: 60%;
   color: white;
+  font-size: 35rpx;
 }
 .user_message{
   margin:25rpx 0 0 0; 
