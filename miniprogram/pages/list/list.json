@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "my-search":"/components/search/search"
+    "my-search":"/components/search/search",
+    "search-bar": "/components/searchbar/searchbar/searchbar"
   },
   "navigationStyle":"custom",
   "enablePullDownRefresh": true

@@ -19,7 +19,7 @@ Page({
     if (!this.data.hasLogin) {
       this.setData({
         hasLogin: true,
-        Icon: e.detail.userInfo.avatarUrl,
+        icon: e.detail.userInfo.avatarUrl,
         userInfo: e.detail.userInfo
       })
     }

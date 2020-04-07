@@ -26,5 +26,19 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/list/list",
+      "text": "主页"
+    },
+    {
+      "pagePath": "pages/message/message",
+      "text": "信息"
+    },
+    {
+      "pagePath": "pages/user/user",
+      "text": "个人"
+    }]
+  }
 }

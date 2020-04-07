@@ -1,4 +1,5 @@
 .nav_top{
+  font-size: 35rpx;
   text-align: center;
   box-sizing: border-box;
   height:180rpx;

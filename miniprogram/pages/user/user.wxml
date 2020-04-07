@@ -1,3 +1,4 @@
+<search-bar></search-bar>
 <view class="top_box">
   <view class="title_box">个人中心</view>
   <view class="user_box clearfix">

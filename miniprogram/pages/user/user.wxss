@@ -4,9 +4,10 @@ page{
   background: #F0F0F0;
 }
 .top_box{
+  border-top: 4rpx solid rgb(220, 220, 220);
   height: 250rpx;
   width: 100%;
-  background:linear-gradient(to bottom right,rgb(0, 174, 255), rgb(0, 255, 157));
+  background:linear-gradient(rgb(0, 174, 255), rgb(0, 225, 255));
 }
 .float-{
   float: left;

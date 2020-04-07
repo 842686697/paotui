@@ -1,6 +1,5 @@
 {
   "component": true,
   "usingComponents": {
-    "search-bar":"/components/searchbar/searchbar/searchbar"
   }
 }
