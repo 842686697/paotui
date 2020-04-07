@@ -3,7 +3,10 @@
   <view class="user_box clearfix">
     <view class="user_icon_box float- clearfix">
       <image src="{{hasLogin?Icon:unLoginIcon}}" class="user_icon float-"></image>
-      <view class="user_name float-">XXXXXX</view>
+      <block>
+        <button style="height:80rpx;width:200rpx;" class="user_button" open-type="getUserInfo" bindgetuserinfo="register" wx:if="{{!hasLogin}}" bindtap="">登陆</button>
+        <view class="user_name float-" wx:else>XXXXXX</view>
+      </block>
     </view>
     <view class="user_message_box float-">
       <view class="user_message">求助：10</view>

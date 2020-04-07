@@ -7,14 +7,24 @@ Page({
   data: {
     icon:String,
     unLoginIcon:'/images/unloginIcon.png',
-    hasLogin:false
+    hasLogin:false,
+    userInfo:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  register:function(e){
+    if (!this.data.hasLogin) {
+      this.setData({
+        hasLogin: true,
+        Icon: e.detail.userInfo.avatarUrl,
+        userInfo: e.detail.userInfo
+      })
+    }
+  },
   onLoad: function (options) {
-
+    
   },
 
   /**

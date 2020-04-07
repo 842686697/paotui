@@ -60,6 +60,11 @@ page{
   font-size: 30rpx;
   color: white;
 }
+.user_button{
+  margin-top:35rpx; 
+  background: lightgray;
+  opacity: 0.6;
+}
 .setting{
   font-size: 30rpx;
   height: 95rpx;
