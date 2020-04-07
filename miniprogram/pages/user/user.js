@@ -1,4 +1,4 @@
-// pages/user/user.js
+const app=getApp();
 Page({
 
   /**
@@ -8,7 +8,8 @@ Page({
     icon:String,
     unLoginIcon:'/images/unloginIcon.png',
     hasLogin:false,
-    userInfo:null
+    userInfo:null,
+    openId:app.globalData.openId
   },
 
   /**
@@ -23,8 +24,31 @@ Page({
       })
     }
   },
+  getOpenid: function () {
+    wx.cloud.callFunction({
+      name: 'login',
+      success: res => {
+        app.globalData.openid = res.result.openid;
+      }
+    })
+  },
   onLoad: function (options) {
-    
+    wx.getSetting({
+      success:res=>{
+        if (res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success:res=>{
+              this.setData({
+                userInfo:res.userInfo,
+                icon:res.userInfo.avatarUrl,
+                hasLogin:true
+              })
+            }
+          })
+        }
+      }
+    })
+    this.getOpenid();
   },
 
   /**
