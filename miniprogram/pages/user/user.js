@@ -52,6 +52,7 @@ Page({
       }
     })
     this.getOpenid();
+    console.log(this.data.userInfo.avatarUrl);
   },
 
   /**
