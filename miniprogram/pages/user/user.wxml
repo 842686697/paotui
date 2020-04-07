@@ -14,6 +14,6 @@
     </view>
   </view>
 </view>
-<view class="setting">我发布的</view>
+<view class="setting">我发布的：</view>
 <view class="setting">我完成的</view>
 <view class="setting">历史记录</view>
