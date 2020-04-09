@@ -37,14 +37,14 @@ Page({
   onLoad: function (options) {
     wx.getSetting({
       success:res=>{
-        if (res.authSetting['scope.userInfo']){
+        if (res.authSetting['scope.userInfo']&&app.globalData.userInfo){
           wx.getUserInfo({
             success:res=>{
               this.setData({
-                userInfo:res.userInfo,
-                icon:res.userInfo.avatarUrl,
+                userInfo:app.globalData.userInfo,
+                icon: app.globalData.userInfo.avatarUrl,
                 hasLogin:true,
-                nickName:res.userInfo.nickName
+                nickName: app.globalData.userInfo.nickName
               })
             }
           })
@@ -52,7 +52,6 @@ Page({
       }
     })
     this.getOpenid();
-    console.log(this.data.userInfo.avatarUrl);
   },
 
   /**
