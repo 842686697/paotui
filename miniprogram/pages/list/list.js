@@ -29,6 +29,11 @@ Page({
       resizeIndex: e.currentTarget.dataset.index
     })
   },
+  toPublish:function(){
+    wx.navigateTo({
+      url: '/pages/publish/publish',
+    })
+  },
   onLoad: function (options) {
     this.getData();
   },

@@ -18,8 +18,9 @@ page{
   margin: 30rpx;
   height: 150rpx;
   width: 90%;
-  background: lightgray;
+  background: white;
   border-radius: 10rpx;
+  box-shadow: 0px 1px 5px darkgray;
 }
 .list_search_box{
 
@@ -45,4 +46,21 @@ page{
 .list_message{
   margin-left: 150rpx;
   line-height: 75rpx;
+  color:#8E8E8E;
+}
+.list_add{
+  border-radius: 50%;
+  height: 150rpx;
+  width: 150rpx;
+  position:fixed;
+  left: 580rpx;
+  top:900rpx;
+  background: lightblue;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150rpx;
+  color:rgb(250, 228, 215);
+  opacity: 0.8;
+  box-shadow: 10rpx 10rpx 10rpx #888888;
 }

@@ -1,5 +1,3 @@
-<my-search back="true" >
-</my-search>
 <view class="list_search_box clearfix">
   <input class="list_search float-" placeholder="搜索"></input>
   <image class="list_searchImg float-" src="./search.png"></image>
@@ -11,3 +9,4 @@
     <view class="list_message">{{item.title}}</view>
   </view>
 </view>
+<view class="list_add" bindtap="toPublish">发布</view>
