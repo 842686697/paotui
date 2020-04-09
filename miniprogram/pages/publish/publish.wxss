@@ -15,13 +15,26 @@ page{
   height: 120rpx;
   width: 120rpx;
   border-radius: 50%;
-  background: blue;
+  border: 1px black solid;
 }
 .top_message_box{
   height: 60%;
   width: 60%;
   margin-left:50rpx;
   line-height: 60rpx;
+}
+.top_username{
+  box-sizing: border-box;
+  padding: 0 20rpx 0;
+  color: #1AFD9C
+}
+.top_time{
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 5rpx 20rpx 5rpx;
+  color: white;
+  background: lightgray;
+  border-radius: 40rpx;
 }
 .bot_box{
   width: 100%;
@@ -49,7 +62,9 @@ page{
   box-sizing: border-box;
   margin:0 30rpx 30rpx 30rpx;
   height: 50%;
-  background: gainsboro;
+  border: 4rpx lightblue solid;
+  border-radius: 20rpx;
+  background: #F0F0F0
 }
 .bot_tags_img{
   box-sizing: border-box;
@@ -68,6 +83,8 @@ page{
   display: flex;
   justify-content:center;
   align-items:center;
+  border-radius: 50%;
+ 
 }
 .bot_type_loss{
   height: 50%;
@@ -76,4 +93,5 @@ page{
   display: flex;
   justify-content:center;
   align-items:center;
+    border-radius: 50%;
 }

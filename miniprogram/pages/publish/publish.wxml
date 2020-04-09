@@ -1,8 +1,8 @@
 <view class="top_box">
 <view class="top_icon float-"></view>
 <view class="top_message_box float-">
-  <view class="top_message">名字</view>
-  <view class="top_message">时间</view>
+  <view class="top_username">名字</view>
+  <view class="top_time">时间</view>
 </view>
 </view>
 <view class="bot_box">
@@ -12,9 +12,10 @@
 </view>
 <view class="bot_tags_box float-">
   <view class="bot_tags_type">
-    <view class="bot_type_get {{}}">丢失</view>
-    <view class="bot_type_loss">获得</view>
+    <view class="bot_type_get {{choose?chooseClass:unChooseClass}}">丢失</view>
+    <view class="bot_type_loss {{choose?chooseClass:unChooseClass}}">获得</view>
   </view>
   <view class="bot_tags_img">图片</view>
 </view>
 </view>
+<button style="height:100rpx;width:400rpx;border-radius:50rpx;background:#1AFD9C;margin-top:100rpx;color:white" class="">提交</button>

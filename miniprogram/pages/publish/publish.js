@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choose:-1,
+    choose:Boolean,
+    chooseClass:'',
+    unChooseClass:'',
     userInfo:null
   },
 
