@@ -7,7 +7,7 @@ page{
   height: 12rpx;
   width: 12rpx;
   float: left;
-  margin-left: 12rpx;
+  margin-left: 10rpx;
   position: relative;
   top: 8rpx;
   border-radius: 50%;
@@ -19,10 +19,10 @@ page{
   margin-left: 610rpx;
   margin-top: 5rpx;
   border-radius: 30rpx;
-  border: 1rpx solid darkgray;
-  box-shadow: 4rpx 2rpx 2rpx darkgray;
+  
+ 
 }
-.tags{
+.tags_finish{
   height: 120rpx;
   width: 120rpx;
   border-radius: 50%;
@@ -33,6 +33,19 @@ page{
   line-height: 120rpx;
   text-align: center;
   background-color: rgb(40, 230, 125);
+  font-size: 35rpx;
+}
+.tags_unfinish{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  float: left;
+  color: white;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: rgb(218, 115, 47);
   font-size: 35rpx;
 }
 .mine{
