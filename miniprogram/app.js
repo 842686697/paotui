@@ -14,9 +14,20 @@ App({
         traceUser: true,
       })
     }
-
     this.globalData = {
       userInfo:null
     }
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: res => {
+              this.globalData.userInfo=res.userInfo;
+            }
+          })
+        }
+      }
+    })
+
   }
 })
