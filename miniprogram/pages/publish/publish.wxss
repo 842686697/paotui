@@ -42,7 +42,7 @@ page{
 }
 .bot_text_box{
   height: 100%;
-  width: 70%;
+  width: 100%;
 }
 .bot_text_title{
   font-size: 45rpx;
@@ -55,43 +55,37 @@ page{
   border-bottom: 4rpx solid lightgray;
 }
 .bot_tags_box{
-  height: 100%;
-  width: 30%;
+  height: 100rpx;
+  width: 100%;
 }
 .bot_tags_type{
-  box-sizing: border-box;
-  margin:0 30rpx 30rpx 30rpx;
-  height: 50%;
-  border: 4rpx lightblue solid;
-  border-radius: 20rpx;
-  background: #F0F0F0
+  width:50%;
+  height: 100%;
 }
 .bot_tags_img{
-  box-sizing: border-box;
-  margin: 30rpx;
-  height: 50%;
-  display: flex;
-  justify-content:center;
+  height: 100%;
+  width:  50%;
+  display:flex;
   align-items:center;
-  background: gainsboro;
-
+  justify-content:center;
+  background: lightgray
 }
 .bot_type_get{
-  height: 50%;
-  width: 100%;
-  background: lightcoral;
-  display: flex;
-  justify-content:center;
+  box-sizing: border-box;
+  height: 100%;
+  width:  50%;
+  display:flex;
   align-items:center;
-  border-radius: 50%;
- 
+  justify-content:center;
+  border-right: 2rpx solid lightgray;
+  border-bottom: 2rpx solid lightgray;
 }
 .bot_type_loss{
-  height: 50%;
-  width: 100%;
-  background: lightgreen;
-  display: flex;
-  justify-content:center;
+  box-sizing: border-box;
+  height: 100%;
+  width:  50%;
+  display:flex;
   align-items:center;
-    border-radius: 50%;
+  justify-content:center;
+  border-bottom: 2rpx solid lightgray;
 }
