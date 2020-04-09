@@ -1,12 +1,20 @@
-<!--miniprogram/pages/publish/publish.wxml-->
-
-<view class="publish">
-  <view class="icon"></view>
-  <view class="username"><text>迷茫的超级兵</text></view>
-  <view class="tags">寻得</view>
-  <view class="date">10-01</view>
-  <view class="content">发布新内容************************************************************************************************************************
+<view class="top_box">
+<view class="top_icon float-"></view>
+<view class="top_message_box float-">
+  <view class="top_message">名字</view>
+  <view class="top_message">时间</view>
+</view>
+</view>
+<view class="bot_box">
+<view class="bot_text_box float-">
+  <input class="bot_text_title" placeholder="标题"></input>
+  <textarea class="bot_text_area" placeholder="请输入捡到/丢失时间，详细信息等等内容"></textarea>
+</view>
+<view class="bot_tags_box float-">
+  <view class="bot_tags_type">
+    <view class="bot_type_get {{}}">丢失</view>
+    <view class="bot_type_loss">获得</view>
   </view>
-  <view class="addpic">添加图片</view>
-  <button class="submit"><text>发表</text></button>
+  <view class="bot_tags_img">图片</view>
+</view>
 </view>
