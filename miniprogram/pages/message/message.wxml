@@ -1,4 +1,3 @@
-<search-bar></search-bar>
 <view class="messages">
 <view class="icon"></view>
   <view class="username"><text>任俊峰</text>
