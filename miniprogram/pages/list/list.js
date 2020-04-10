@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   getData:function(){
+    //获取数据
     const { collection } = this.data;
     const db = wx.cloud.database();
     const _ = db.command;
@@ -48,8 +49,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
+  //上传成功返回页面时刷新页面
   onShow: function () {
-
+    setTimeout(this.getData,100);
   },
 
   /**

@@ -20,7 +20,7 @@ page{
 .top_message_box{
   height: 60%;
   width: 60%;
-  margin-left:50rpx;
+  margin-left:30rpx;
   line-height: 60rpx;
 }
 .top_username{
@@ -32,6 +32,7 @@ page{
   box-sizing: border-box;
   display: inline-block;
   padding: 5rpx 20rpx 5rpx;
+  margin-left:20rpx; 
   color: white;
   background: lightgray;
   border-radius: 40rpx;
@@ -45,14 +46,15 @@ page{
   width: 100%;
 }
 .bot_text_title{
+  padding: 20rpx;
   font-size: 45rpx;
   height: 10%;
 }
 .bot_text_area{
+  padding: 20rpx;
   height: 90%;
   width: 100%;
   border-top: 4rpx solid lightgray;
-  border-bottom: 4rpx solid lightgray;
 }
 .bot_tags_box{
   height: 100rpx;
@@ -88,4 +90,12 @@ page{
   align-items:center;
   justify-content:center;
   border-bottom: 2rpx solid lightgray;
+}
+.choose{
+  background: lightblue;
+  box-shadow:0px 1rpx 5rpx #000000 inset;
+  transition: all 0.5s;
+}
+.unchoose{
+  background:white;
 }

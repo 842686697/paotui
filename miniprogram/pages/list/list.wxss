@@ -15,7 +15,7 @@ page{
   overflow: hidden;
 }
 .list_box{
-  margin: 30rpx;
+  margin: 30rpx 30rpx 0;
   height: 150rpx;
   width: 90%;
   background: white;
