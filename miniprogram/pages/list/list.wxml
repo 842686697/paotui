@@ -3,7 +3,7 @@
   <image class="list_searchImg float-" src="./search.png"></image>
 </view>
 <view wx:for="{{list}}" data-index="{{index}}" class="list_box" bindtap="resize">
-  <image class="list_icon float-" src="{{hasLoad?icon:unLoginIcon}}"></image>
+  <image style="border-radius:50%;" class="list_icon float-" src="{{item.icon?item.icon:unLoginIcon}}"></image>
   <view>
     <view class="list_message">{{item.date}}</view>
     <view class="list_message">{{item.title}}</view>

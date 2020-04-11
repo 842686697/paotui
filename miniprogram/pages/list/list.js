@@ -5,8 +5,7 @@ Page({
     collection:'list',
     groupId:'',
     resizeIndex:2,
-    unLoginIcon:'/images/unloginIcon.png',
-    hasLoad:false
+    unLoginIcon:'/images/unloginIcon.png'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -22,6 +21,9 @@ Page({
         this.setData({
           list: res.data
         })
+        for (let i = 0; i < list.lenghth;i++){
+          
+        }
       }
     })
   },
@@ -51,7 +53,7 @@ Page({
    */
   //上传成功返回页面时刷新页面
   onShow: function () {
-    setTimeout(this.getData,100);
+    setTimeout(this.getData,300);
   },
 
   /**

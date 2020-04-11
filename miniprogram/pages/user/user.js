@@ -34,23 +34,36 @@ Page({
       }
     })
   },
-  onLoad: function (options) {
-    wx.getSetting({
-      success:res=>{
-        if (res.authSetting['scope.userInfo']&&app.globalData.userInfo){
-          wx.getUserInfo({
-            success:res=>{
-              this.setData({
-                userInfo:app.globalData.userInfo,
-                icon: app.globalData.userInfo.avatarUrl,
-                hasLogin:true,
-                nickName: app.globalData.userInfo.nickName
-              })
-            }
-          })
+  getAuth:function(){
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        icon: app.globalData.userInfo.avatarUrl,
+        nickName: app.globalData.userInfo.nickName,
+        hasLogin: true
+      })
+    }
+    else {
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: res => {
+                this.setData({
+                  userInfo: res.userInfo,
+                  icon: res.userInfo.avatarUrl,
+                  nickName: res.userInfo.nickName,
+                  hasLogin: true
+                })
+              }
+            })
+          }
         }
-      }
-    })
+      })
+    }
+  },
+  onLoad: function (options) {
+    this.getAuth();
     this.getOpenid();
   },
 

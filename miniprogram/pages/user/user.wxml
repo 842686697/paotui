@@ -1,5 +1,5 @@
 <view class="top_box">
-  <view class="title_box">个人中心</view>
+
   <view class="user_box clearfix">
     <view class="user_icon_box float- clearfix">
       <image src="{{hasLogin?icon:unLoginIcon}}" class="user_icon float-"></image>

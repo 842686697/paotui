@@ -21,11 +21,13 @@ page{
   background: white;
   border-radius: 10rpx;
   box-shadow: 0px 1px 5px darkgray;
+  transition: all 0.5s;
 }
 .list_search_box{
 
 }
 .list_search{
+  padding: 8rpx 20rpx 8rpx;
   margin: 20rpx 0 0 30rpx; 
   height: 50rpx;
   width: 70%;
@@ -39,7 +41,7 @@ page{
   margin:15rpx 0 0 15rpx; 
 }
 .list_icon{
-  padding: 20rpx 0 0 20rpx;
+  margin: 15rpx 0 0 20rpx;
   height: 120rpx;
   width: 120rpx;
 }
@@ -53,8 +55,8 @@ page{
   height: 150rpx;
   width: 150rpx;
   position:fixed;
-  left: 580rpx;
-  top:900rpx;
+  left:78%;
+  top:85%;
   background: lightblue;
   font-size: 40rpx;
   font-weight: bold;

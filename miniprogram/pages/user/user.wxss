@@ -4,10 +4,9 @@ page{
   background: #F0F0F0;
 }
 .top_box{
-  border-top: 4rpx solid rgb(220, 220, 220);
-  height: 250rpx;
+  height: 400rpx;
   width: 100%;
-  background:linear-gradient(rgb(0, 174, 255), rgb(0, 225, 255));
+  background:linear-gradient(to bottom right,rgb(0, 195, 255), rgb(0, 255, 200)	);
 }
 .float-{
   float: left;
@@ -20,15 +19,9 @@ page{
   clear:both;
   overflow: hidden;
 }
-.title_box{
-  height: 80rpx;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  line-height: 80rpx;
-  color: white;
-}
+
 .user_box{
+  margin-top:200rpx;  
   height: 170rpx;
   width: 100%;
 }

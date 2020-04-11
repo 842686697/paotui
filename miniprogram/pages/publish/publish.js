@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choose:Boolean,
+    choose:false,
     chooseClass:'choose',
     unChooseClass:'unchoose',
     userInfo:null,
@@ -15,12 +15,12 @@ Page({
   },
   chooseGet:function(){
     this.setData({
-      choose:true,
+      choose:true
     })
   },
   chooseLoss: function () {
     this.setData({
-      choose: false,
+      choose: false
     })
   },
   /**
@@ -85,7 +85,7 @@ Page({
   },
   collectionAdd: function(){
     wx.showToast({
-      title: '提交中',
+      title: '提交中...',
       icon: 'loading',
       duration: 2000
     })
@@ -93,23 +93,22 @@ Page({
     const db = wx.cloud.database();
     
     let date = this.getDate();
+    let type = this.data.choose
+
     let data = {
-      openid: app.globalData.openid,
       date: date,
       title: '',
       content: '',
-      icon:''
+      icon:this.data.userIcon,
+      userName:this.data.userName,
+      success:false,
+      type:type?'get':'loss'
     };
     // 用回调函数解决异步问题，通过判断各个值是否为空来判断所有异步是否完成
     let title = f((res) => {
-      if (res.date != '' && res.openid != '' && res.title != '' && res.content != '')
+      if (res.date != ''  && res.title != '' && res.content != ''&& res.icon != '')
       db.collection(collection).add({
-        data: {
-          openid:res.openid,
-          date:res.date,
-          title:res.title,
-          content:res.content
-        },
+        data: data,
         success: res => {
           console.log(res)
         },
@@ -133,6 +132,7 @@ Page({
         data.content = res.value
         callback(data)
       }).exec();
+      
     }
   },
   
