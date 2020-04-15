@@ -18,7 +18,8 @@
     "pages/message/message",
     "pages/details/details",
     "pages/publish/publish",
-    "pages/my_publish/my_publish"
+    "pages/my_publish/my_publish",
+    "pages/finished/finished"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

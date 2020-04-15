@@ -1,0 +1,23 @@
+<!--miniprogram/pages/finished/finished.wxml-->
+<view class="mine">
+<view class="icon"></view>
+<view class="username"><text>徐星为</text></view>
+<view class="more">
+  <view class="little_point"></view>
+  <view class="little_point"></view>
+  <view class="little_point"></view></view>
+<view class="date">12/06</view>
+<view class="detials">我在我在我在我在我在我在我在我在我在我在我在我在</view>
+<view class="finish_time">12:02</view>
+</view>
+<view class="mine">
+<view class="icon"></view>
+<view class="username"><text>haishis￥</text></view>
+<view class="more">
+  <view class="little_point"></view>
+  <view class="little_point"></view>
+  <view class="little_point"></view></view>
+<view class="date">12/06</view>
+<view class="detials">我在我在我在我在我在我在我在我在我在我在我在我在</view>
+<view class="finish_time">12:02</view>
+</view>
