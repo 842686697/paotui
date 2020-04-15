@@ -15,7 +15,7 @@
     <view class="bot_type_get  float- {{choose?chooseClass:unChooseClass}}" bindtap="chooseGet">获得</view>
     <view class="bot_type_loss  float- {{!choose?chooseClass:unChooseClass}}" bindtap="chooseLoss">丢失</view>
   </view>
-  <view class="bot_tags_img float-">图片</view>
+  <button style="height: 100%;width:50%;border-radius:20rpx;" bindtap="upload" class="bot_tags_img float-">点击上传图片(最多5张,第一张作为展示)</button>
 </view>
 </view>
 <button style="height:100rpx;width:400rpx;border-radius:50rpx;background:#1AFD9C;margin-top:150rpx;color:white" bindtap="sendConfirm">提交</button>

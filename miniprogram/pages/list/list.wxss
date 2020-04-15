@@ -22,6 +22,25 @@ page{
   border-radius: 10rpx;
   box-shadow: 0px 1px 5px darkgray;
   transition: all 0.5s;
+  position: relative;
+}
+.list_resizeBox{
+  margin: 30rpx 30rpx 0;
+  height: 400rpx;
+  width: 90%;
+  background: #D9FFFF;
+  border-radius: 10rpx;
+  box-shadow: 0px 1px 5px darkgray;
+  transition: all 0.5s;
+  position: relative;
+}
+.list_content{
+  border: 1px red solid;
+  height: 200rpx;
+  width: 300rpx;
+  position: absolute;
+  left:15rpx;
+  top: 150rpx
 }
 .list_search_box{
 
@@ -38,7 +57,6 @@ page{
 .list_searchImg{
   height: 64rpx;
   width: 64rpx;
-  margin:15rpx 0 0 15rpx; 
 }
 .list_icon{
   margin: 15rpx 0 0 20rpx;
@@ -46,9 +64,22 @@ page{
   width: 120rpx;
 }
 .list_message{
-  margin-left: 150rpx;
+  margin-left: 10rpx;
   line-height: 75rpx;
   color:#8E8E8E;
+  width: 200rpx;
+}
+.list_img{
+  margin: 15rpx 15rpx 0 0;
+  height: 120rpx;
+  width: 120rpx;
+}
+.list_resizeImg{
+  height: 250rpx;
+  width: 250rpx;
+  position: absolute;
+  left: 250rxp;
+  top: 130rpx;
 }
 .list_add{
   border-radius: 50%;

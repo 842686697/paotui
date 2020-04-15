@@ -65,6 +65,7 @@ page{
   height: 100%;
 }
 .bot_tags_img{
+  font-size: 30rpx;
   height: 100%;
   width:  50%;
   display:flex;

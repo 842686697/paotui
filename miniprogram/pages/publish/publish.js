@@ -11,7 +11,9 @@ Page({
     userInfo:null,
     userIcon:'',
     userName:'',
-    collection:'list'
+    collection:'list',
+    imgs:[],
+    imgId:[]
   },
   chooseGet:function(){
     this.setData({
@@ -69,10 +71,19 @@ Page({
     return num;
   },
   sendConfirm:function(){
-    this.collectionAdd();
-    //上传后返回页面
-    wx.navigateBack({
+    wx.showLoading({
+      title: '提交中...',
     })
+
+    this.uploadFile(
+      this.collectionAdd,function(){
+        //上传后再返回页面,不然获取不到页面元素数据
+        wx.navigateBack({
+        })
+        wx.hideLoading();
+      }
+    );
+
   },
   getOpenid: function () {
     //用云函数获取openid
@@ -83,18 +94,13 @@ Page({
       }
     })
   },
-  collectionAdd: function(){
-    wx.showToast({
-      title: '提交中...',
-      icon: 'loading',
-      duration: 2000
-    })
+  collectionAdd: function(back){
     const { collection } = this.data;
     const db = wx.cloud.database();
     
     let date = this.getDate();
     let type = this.data.choose
-
+    console.log('开始上传')
     let data = {
       date: date,
       title: '',
@@ -102,15 +108,17 @@ Page({
       icon:this.data.userIcon,
       userName:this.data.userName,
       success:false,
-      type:type?'get':'loss'
+      type:type?'get':'loss',
+      imgId:this.data.imgId
     };
     // 用回调函数解决异步问题，通过判断各个值是否为空来判断所有异步是否完成
-    let title = f((res) => {
+    f((res) => {
       if (res.date != ''  && res.title != '' && res.content != ''&& res.icon != '')
       db.collection(collection).add({
         data: data,
         success: res => {
           console.log(res)
+          back();
         },
         fail: res => {
           console.log('fail')
@@ -135,7 +143,44 @@ Page({
       
     }
   },
-  
+  //上传临时图片文件到imgs临时文件
+  upload:function(){
+    wx.chooseImage({
+      count:5,
+      success: res=>{
+        this.setData({
+          imgs:res.tempFilePaths
+        })
+      },
+      fail:res=>{
+        console.log('调用图片失败:',res)
+      }
+    })
+  },
+  //将临时文件储存到云端
+  uploadFile:function(callback,back){
+    for (let i = 0; i < this.data.imgs.length;i++){
+      wx.cloud.uploadFile({
+        cloudPath: 'listImgs/'+new Date().getTime()+'_'+i+'.png',
+        filePath: this.data.imgs[i],
+        success:res=>{
+          let fileId=this.data.imgId;
+          fileId.push(res.fileID);
+          this.setData({
+            imgId:fileId
+          })
+          console.log('成功',res,this.data.imgId);
+
+          if(this.data.imgId.length>=this.data.imgs.length){
+            callback(back);
+          }
+        },
+        fail:res=>{
+          console.log('失败', res);
+        }
+      }) 
+    }
+  },
   onLoad: function (options) {
     this.getOpenid();
     this.getAuth();
@@ -189,11 +234,4 @@ Page({
   onShareAppMessage: function () {
 
   },
-  async try(fn, title) {
-    try {
-      await fn()
-    } catch (e) {
-
-    }
-  }
 })

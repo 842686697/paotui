@@ -4,8 +4,10 @@ Page({
     list:[],
     collection:'list',
     groupId:'',
-    resizeIndex:2,
-    unLoginIcon:'/images/unloginIcon.png'
+    resizeIndex:-1,
+    unLoginIcon:'/images/unloginIcon.png',
+    listUnSelectStyle:'list_box',
+    listSelectStyle:'list_resizeBox'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -21,16 +23,22 @@ Page({
         this.setData({
           list: res.data
         })
-        for (let i = 0; i < list.lenghth;i++){
-          
-        }
+
       }
     })
   },
+  //用来锁定聚焦放大的信息窗口
   resize:function(e){
-    this.setData({
-      resizeIndex: e.currentTarget.dataset.index
-    })
+    if (this.data.resizeIndex == e.currentTarget.dataset.index){
+      this.setData({
+        resizeIndex: -1
+      })
+    }
+    else{
+      this.setData({
+        resizeIndex: e.currentTarget.dataset.index
+      })
+    }
   },
   toPublish:function(){
     wx.navigateTo({
