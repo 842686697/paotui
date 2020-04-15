@@ -67,9 +67,9 @@ page{
   width: 120rpx;
 }
 .list_resizeImg{
-  height: 230rpx;
-  width: 230rpx;
-  display: block
+  height: 200rpx;
+  width: 200rpx;
+  margin-left: 20rpx;
 }
 .list_imgs{
   position: absolute;

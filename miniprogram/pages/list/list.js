@@ -12,6 +12,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  viewImgs:function(e){
+    let getList=this.data.list.filter(res=>{
+      return res._id == e.target.dataset.id
+    })
+    console.log(getList[0])
+    wx.previewImage({
+      current: getList[0].imgId[e.target.dataset.index],
+      urls: getList[0].imgId,
+      success: res => {
+        console.log('成功',res);
+      },
+      fail:res=>{
+        console.log('失败',res)
+      }
+    })
+  },
   getData:function(){
     //获取数据
     const { collection } = this.data;

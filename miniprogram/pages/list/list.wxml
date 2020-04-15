@@ -13,8 +13,8 @@
 
   <block wx:else>
   <view class="list_content" >{{item.content}}</view>
-  <view wx:for-items="{{item.imgId}}" class="list_imgs" wx:key="item">
-    <image class="list_resizeImg " src="{{item}}"></image>
+  <view class="list_imgs">
+    <image data-id="{{item._id}}" wx:for-item="items" wx:for = "{{item.imgId}}" data-index="{{index}}" class="list_resizeImg" src="{{items}}" catchtap="viewImgs"></image>
     </view>
   </block>
 </view>
