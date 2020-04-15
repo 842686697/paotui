@@ -146,7 +146,7 @@ Page({
   //上传临时图片文件到imgs临时文件
   upload:function(){
     wx.chooseImage({
-      count:5,
+      count:2,
       success: res=>{
         this.setData({
           imgs:res.tempFilePaths
@@ -159,27 +159,33 @@ Page({
   },
   //将临时文件储存到云端
   uploadFile:function(callback,back){
-    for (let i = 0; i < this.data.imgs.length;i++){
-      wx.cloud.uploadFile({
-        cloudPath: 'listImgs/'+new Date().getTime()+'_'+i+'.png',
-        filePath: this.data.imgs[i],
-        success:res=>{
-          let fileId=this.data.imgId;
-          fileId.push(res.fileID);
-          this.setData({
-            imgId:fileId
-          })
-          console.log('成功',res,this.data.imgId);
-
-          if(this.data.imgId.length>=this.data.imgs.length){
-            callback(back);
-          }
-        },
-        fail:res=>{
-          console.log('失败', res);
-        }
-      }) 
+    if(this.data.imgs.length==0){
+      callback(back);
     }
+    else{
+      for (let i = 0; i < this.data.imgs.length; i++) {
+        wx.cloud.uploadFile({
+          cloudPath: 'listImgs/' + new Date().getTime() + '_' + i + '.png',
+          filePath: this.data.imgs[i],
+          success: res => {
+            let fileId = this.data.imgId;
+            fileId.push(res.fileID);
+            this.setData({
+              imgId: fileId
+            })
+            console.log('成功', res, this.data.imgId);
+
+            if (this.data.imgId.length >= this.data.imgs.length) {
+              callback(back);
+            }
+          },
+          fail: res => {
+            console.log('失败', res);
+          }
+        })
+      }
+    }
+    
   },
   onLoad: function (options) {
     this.getOpenid();

@@ -1,6 +1,5 @@
 <view class="list_search_box clearfix">
   <input class="list_search float-" placeholder="搜索"></input>
-  <image class="list_searchImg float-" src="./search.png"></image>
 </view>
 
 <view wx:for="{{list}}" wx:key="_id" data-index="{{index}}" class="{{resizeIndex!=index?listUnSelectStyle:listSelectStyle}}" bindtap="resize">
@@ -13,8 +12,10 @@
   <image style="float:right;" class="list_img" src="{{item.imgId[0]}}" wx:if="{{resizeIndex!=index}}"></image>
 
   <block wx:else>
-  <image class="list_resizeImg" src="{{item.imgId[1]}}"></image>
-  <view style="display:block" class="list_content" >{{item.content}}</view>
+  <view class="list_content" >{{item.content}}</view>
+  <view wx:for-items="{{item.imgId}}" class="list_imgs" wx:key="item">
+    <image class="list_resizeImg " src="{{item}}"></image>
+    </view>
   </block>
 </view>
 

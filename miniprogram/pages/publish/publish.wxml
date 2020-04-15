@@ -8,7 +8,7 @@
 <view class="bot_box">
 <view class="bot_text_box">
   <input class="bot_text_title" placeholder="标题"></input>
-  <textarea class="bot_text_area" maxlength="200" placeholder="请输入捡到/丢失时间，详细信息等等内容(限制200字)"></textarea>
+  <textarea class="bot_text_area" maxlength="140" placeholder="请输入捡到/丢失时间，详细信息等等内容(限制140字)"></textarea>
 </view>
 <view class="bot_tags_box">
   <view class="bot_tags_type float-">
