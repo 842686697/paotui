@@ -35,7 +35,6 @@ page{
   position: relative;
 }
 .list_content{
-  border: 1px red solid;
   height: 200rpx;
   width: 300rpx;
   position: absolute;
