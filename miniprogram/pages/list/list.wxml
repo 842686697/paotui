@@ -1,6 +1,7 @@
-<view class="list_search_box clearfix">
-  <input class="list_search float-" placeholder="搜索"></input>
-</view>
+<image class="backimg" src="/images/background.jpg"></image>
+<view class="list_search_box">
+  <input class="list_search" placeholder="搜索" confirm-type="search" bindconfirm="search"></input>
+</view> 
 
 <view wx:for="{{list}}" wx:key="_id" data-index="{{index}}" class="{{resizeIndex!=index?listUnSelectStyle:listSelectStyle}}" bindtap="resize">
   

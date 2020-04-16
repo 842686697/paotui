@@ -7,11 +7,26 @@ Page({
     resizeIndex:-1,
     unLoginIcon:'/images/unloginIcon.png',
     listUnSelectStyle:'list_box',
-    listSelectStyle:'list_resizeBox'
+    listSelectStyle:'list_resizeBox',
+    regExp:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
+  search:function(e){
+    let reg;
+    if(e.detail.value==''){
+      reg=''
+    }
+    else{
+      reg = '^.*' + e.detail.value + '.*$';
+    }
+    console.log(reg,typeof(reg))
+    this.setData({
+      regExp:reg
+    })
+    this.getData()
+  },
   viewImgs:function(e){
     let getList=this.data.list.filter(res=>{
       return res._id == e.target.dataset.id
@@ -30,18 +45,37 @@ Page({
   },
   getData:function(){
     //获取数据
-    const { collection } = this.data;
+    const { collection,regExp } = this.data;
     const db = wx.cloud.database();
-    const _ = db.command;
-    const listData = db.collection(collection).where({}).get({
-      success: res => {
-        console.log(res);
-        this.setData({
-          list: res.data
-        })
+    const _ = db.command;//暂时无用
 
-      }
-    })
+    if (regExp!=''){//如果没有搜索就普通拉取数据
+      const listData = db.collection(collection).where({
+        title: db.RegExp({
+          regexp: regExp,
+          options: 'i'
+        })
+      }).get({
+        success: res => {
+          console.log(res);
+          this.setData({
+            list: res.data
+          })
+
+        }
+      })
+    }
+    else{//否则用正则表达式搜索需要的相关数据
+      const listData = db.collection(collection).where({}).get({
+        success: res => {
+          console.log(res);
+          this.setData({
+            list: res.data
+          })
+
+        }
+      })
+    }
   },
   //用来锁定聚焦放大的信息窗口
   resize:function(e){
