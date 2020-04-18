@@ -82,6 +82,11 @@ page{
   justify-content:center;
   border-right: 2rpx solid lightgray;
   border-bottom: 2rpx solid lightgray;
+  border-bottom-left-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  border:1px solid black;
 }
 .bot_type_loss{
   box-sizing: border-box;
@@ -91,6 +96,11 @@ page{
   align-items:center;
   justify-content:center;
   border-bottom: 2rpx solid lightgray;
+  border-bottom-left-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  border:1px solid black;
 }
 .choose{
   background: lightblue;

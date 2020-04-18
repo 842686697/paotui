@@ -13,6 +13,32 @@ page{
   border-radius: 50%;
   background-color: darkgray;
 }
+.tags_get{
+  height: 35rpx;
+  width: 35rpx;
+  font-size: 20rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 76%;
+  background-color: green;
+  line-height: 30rpx;
+  text-align: center;
+  color: white;
+  opacity: 0.6;
+}
+.tags_lost{
+  height: 35rpx;
+  width: 35rpx;
+  font-size: 20rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 76%;
+  background-color: red;
+  line-height: 30rpx;
+  text-align: center;
+  color: white;
+  opacity: 0.6;
+}
 .more{
   height: 30rpx;
   width: 80rpx;
@@ -57,6 +83,7 @@ page{
   box-shadow: 2px 2px 2px darkgray;
   border-top: 1rpx solid darkgray;
   border-left: 1rpx solid darkgray;
+  position: relative;
 }
 .username{
   height: 50rpx;

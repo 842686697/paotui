@@ -28,7 +28,6 @@ page{
   box-shadow: 0px 1px 5px darkgray;
   transition: all 0.3s;
   position: relative;
-  opacity: 0.9;
 }
 .list_resizeBox{
   margin: 30rpx 30rpx 0;
@@ -39,13 +38,12 @@ page{
   box-shadow: 0px 1px 5px darkgray;
   transition: all 0.3s;
   position: relative;
-  opacity: 0.9;
 }
 .list_content{
-  height: 450rpx;
-  width: 650rpx;
+  height: auto;
+  width: 620rpx;
   position: absolute;
-  left:15rpx;
+  left:30rpx;
   top: 150rpx;
   border-bottom: 5rpx gray solid;
   

@@ -9,6 +9,7 @@
 <view class="date">12/06</view>
 <view class="detials">我在我在我在我在我在我在我在我在我在我在我在我在</view>
 <view class="finish_time">12:02</view>
+<view class="tags_get">拾</view>
 </view>
 <view class="mine">
 <view class="tags_unfinish">未完成</view>
@@ -20,5 +21,6 @@
 <view class="date">12/06</view>
 <view class="detials">我在我在我在我在我在我在我在我在我在我在我在我在</view>
 <view class="finish_time">12:02</view>
+<view class="tags_lost"><text>丢</text></view>
 </view>
 
