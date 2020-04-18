@@ -49,24 +49,45 @@ Page({
     const db = wx.cloud.database();
     const _ = db.command;//暂时无用
 
-    if (regExp!=''){//如果没有搜索就普通拉取数据
-      const listData = db.collection(collection).where({
+    if (regExp!=''){//如果有搜索条件就采用正则表达式拉取数据
+    //清空list
+      this.setData({
+        list:[]
+      })
+      //两次查询，一次查询title，一次查询content
+      db.collection(collection).where({
+        content: db.RegExp({
+          regexp: regExp,
+          options: 'i'
+        })
+      }).get({
+        success: res => {
+          let newlist = this.data.list;
+          newlist =newlist.concat(res.data)
+          this.setData({
+            list: newlist
+          })
+
+        }
+      })
+      db.collection(collection).where({
         title: db.RegExp({
           regexp: regExp,
           options: 'i'
         })
       }).get({
         success: res => {
-          console.log(res);
+          let newlist=this.data.list;
+          newlist=newlist.concat(res.data)
           this.setData({
-            list: res.data
+            list: newlist
           })
 
         }
       })
     }
-    else{//否则用正则表达式搜索需要的相关数据
-      const listData = db.collection(collection).where({}).get({
+    else{//否则搜索全部数据
+      db.collection(collection).where({}).get({
         success: res => {
           console.log(res);
           let newres=res.data.reverse();
