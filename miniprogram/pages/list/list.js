@@ -69,8 +69,9 @@ Page({
       const listData = db.collection(collection).where({}).get({
         success: res => {
           console.log(res);
+          let newres=res.data.reverse();
           this.setData({
-            list: res.data
+            list: newres
           })
 
         }

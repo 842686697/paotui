@@ -72,6 +72,34 @@ page{
   color:#8E8E8E;
   width: 380rpx;
 }
+.list_get{
+  position: absolute;
+  left: 0;
+  top: 110rpx;
+  color: white;
+  background: green;
+  height: 40rpx;
+  width: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  font-size: 25rpx;
+  opacity: 0.6;
+}
+.list_loss{
+  position: absolute;
+  left: 0;
+  top: 110rpx;
+  color: white;
+  background: red;
+  height: 40rpx;
+  width: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  font-size: 25rpx;
+  opacity: 0.6;
+}
 .list_img{
   margin: 15rpx 15rpx 0 0;
   height: 120rpx;

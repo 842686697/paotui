@@ -10,6 +10,7 @@
     <view class="list_message">{{item.date}}</view>
     <view class="list_message">{{item.title}}</view>
   </view>
+  <view class="{{item.type=='get'?'list_get':'list_loss'}} float-">{{item.type=='get'?'拾':'丢'}}</view>
   <image style="float:right;" class="list_img" src="{{item.imgId[0]}}" wx:if="{{resizeIndex!=index}}"></image>
 
   <block wx:else>
