@@ -7,5 +7,5 @@
 <view class="content">
 **************************************************************************************************************************</view>
 
-<button class="reply" type="submit"><text>回复</text></button>
+<button class="finish" type="submit"><text>已完成</text></button>
 </view>
