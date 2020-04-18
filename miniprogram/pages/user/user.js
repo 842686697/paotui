@@ -26,6 +26,16 @@ Page({
       })
     }
   },
+  toMyPublish:function(){
+    wx.navigateTo({
+      url: '/pages/my_publish/my_publish'
+    })
+  },
+  toFinished:function(){
+    wx.navigateTo({
+      url:'/pages/finished/finished'
+    })
+  },
   getOpenid: function () {
     wx.cloud.callFunction({
       name: 'login',

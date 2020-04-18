@@ -60,6 +60,7 @@ page{
   background: lightgray;
   opacity: 0.6;
 }
+/* 无效 */
 .setting{
   font-size: 30rpx;
   height: 95rpx;
