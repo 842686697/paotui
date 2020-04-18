@@ -56,7 +56,7 @@ page{
   border-radius: 15rpx;
   background-color: darkseagreen;
 }
-.reply{
+.finish{
     height: 80rpx;
     width: 120rpx;
     float: left;
@@ -72,4 +72,5 @@ page{
     line-height: 50rpx;
     color: white;
     font-size: 36rpx;
+    opacity: 0.6;
 }
