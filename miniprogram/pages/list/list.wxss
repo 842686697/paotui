@@ -48,6 +48,8 @@ page{
   left:30rpx;
   top: 160rpx;
   border-bottom: 4rpx lightgray solid;
+  white-space:pre-wrap;
+  word-wrap:break-word;
 }
 .list_search{
   padding: 8rpx 20rpx 8rpx;

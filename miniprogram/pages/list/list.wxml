@@ -3,7 +3,7 @@
   <input class="list_search" placeholder="搜索" confirm-type="search" bindconfirm="search"></input>
 </view> 
 
-<view wx:for="{{list}}" wx:key="_id" data-index="{{index}}" class="{{resizeIndex!=index?listUnSelectStyle:listSelectStyle}}" bindtap="resize">
+<view wx:for="{{list}}" wx:if="{{item.isFinish==false}}" wx:key="_id" data-index="{{index}}" class="{{resizeIndex!=index?listUnSelectStyle:listSelectStyle}}" bindtap="resize">
   
   <image style="border-radius:50%;" class="list_icon float-" src="{{item.icon?item.icon:unLoginIcon}}"></image>
   <view class="float-">

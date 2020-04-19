@@ -66,8 +66,7 @@ Page({
     if (10 - day > 0) {
       day='0'+day
     }
-    let num = year.toString() + month.toString() + day.toString();
-    num = parseInt(num);
+    let num = year.toString() + '/' + month.toString() + '/' + day.toString();
     return num;
   },
   sendConfirm:function(){
@@ -107,7 +106,7 @@ Page({
       content: '',
       icon:this.data.userIcon,
       userName:this.data.userName,
-      success:false,
+      isFinish:false,
       type:type?'get':'loss',
       imgId:this.data.imgId
     };

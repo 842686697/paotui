@@ -86,7 +86,6 @@ page{
   border-top-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
   border-top-right-radius: 30rpx;
-  border:1px solid black;
 }
 .bot_type_loss{
   box-sizing: border-box;
@@ -100,7 +99,6 @@ page{
   border-top-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
   border-top-right-radius: 30rpx;
-  border:1px solid black;
 }
 .choose{
   background: lightblue;

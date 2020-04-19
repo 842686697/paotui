@@ -1,12 +1,12 @@
 <!--miniprogram/pages/my_publish/my_publish.wxml-->
-<view wx:for="{{list}}" wx:key="_id" class="mine">
-<view class="{{item.success==true?'tags_finish':'tags_unfinish'}}">{{item.success==true?'已完成':'未完成'}}</view>
+<view wx:for="{{list}}" wx:key="_id" data-id="{{item._id}}" class="mine" bindtap="toDetails">
+<view class="{{item.isFinish==true?'tags_finish':'tags_unfinish'}}">{{item.isFinish==true?'已完成':'未完成'}}</view>
 <view class="username">{{item.userName}}</view>
 <view class="more">
   <view class="little_point"></view>
   <view class="little_point"></view>
   <view class="little_point"></view></view>
-<view class="date">2020/04/15</view>
-<view class="detials">{{item.content}}</view>
+<view class="date">{{item.date}}</view>
+<view class="detials">{{item.title}}</view>
 <view class="{{item.type=='get'?'tags_get':'tags_lost'}}">{{item.type=='get'?'拾':'丢'}}</view>
 </view>

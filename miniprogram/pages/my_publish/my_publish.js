@@ -13,6 +13,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  toDetails:function(e){
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '/pages/details/details?id=' + e.currentTarget.dataset.id
+    })
+  },
   getOpenid: function (callback) {
     //用云函数获取openid
     wx.cloud.callFunction({
@@ -33,10 +39,11 @@ Page({
       _openid: openid
     }).get({
       success: res => {
-        console.log(res)
+        let newres = res.data.reverse();
         this.setData({
-          list: res.data
+          list: newres
         })
+
       }
     })
   },
@@ -55,7 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData();
   },
 
   /**

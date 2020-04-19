@@ -1,11 +1,13 @@
 <!--miniprogram/pages/details/details.wxml-->
 <view class="details">
-<view class="icon"></view>
-<view class="username"><text>awsl</text></view>
-<view class="tags"><text>丢失</text></view>
-<view class="date">10-01</view>
+<image src="{{list.icon}}" class="icon"></image>
+<view class="username">{{list.userName}}</view>
+<view class="{{list.type=='get'?'tags_get':'tags_lost'}}">{{list.type=='get'?'拾取':'丢失'}}</view>
+<view class="date">{{list.date}}</view>
+<view class="title">{{list.title}}</view>
 <view class="content">
-**************************************************************************************************************************</view>
-
-<button class="finish" type="submit"><text>已完成</text></button>
+{{list.content}}</view>
+<image wx:for="{{list.imgId}}" data-index="{{index}}" class="list_resizeImg" src="{{item}}"></image>
+<view class="{{list.isFinish==true?'finish':'unfinish'}}" bindtap="{{list.isFinish==true?'':'setFinish'}}">{{list.isFinish==true?'已完成':'未完成,点击设置为已完成'}}</view>
+<view class="delete" bindtap="dataDelete">删除该发布信息</view>
 </view>

@@ -91,13 +91,13 @@ page{
   float: left;
   margin-top: 20rpx;
   margin-left: 20rpx;
-  color: darkgray;
+  color: black;
 }
 .date{
   height: 30rpx;
   width: 80rpx;
   float: left;
-  margin-left: 610rpx;
+  margin-left: 550rpx;
   margin-top: -80rpx;
   text-align: center;
   line-height: 30rpx;
