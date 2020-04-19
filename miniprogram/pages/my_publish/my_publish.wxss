@@ -42,11 +42,11 @@ page{
 .more{
   height: 30rpx;
   width: 80rpx;
-  margin-left: 610rpx;
-  margin-top: 5rpx;
+  margin-left: 630rpx;
+  margin-top: 14rpx;
   border-radius: 30rpx;
-  
- 
+  color: darkgray;
+  font-size: 28rpx;
 }
 .tags_finish{
   height: 120rpx;
@@ -98,7 +98,7 @@ page{
   width: 80rpx;
   float: left;
   margin-left: 550rpx;
-  margin-top: -80rpx;
+  margin-top: -47rpx;
   text-align: center;
   line-height: 30rpx;
   border-bottom-left-radius: 40rpx;

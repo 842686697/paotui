@@ -3,9 +3,9 @@
 <view class="{{item.isFinish==true?'tags_finish':'tags_unfinish'}}">{{item.isFinish==true?'已完成':'未完成'}}</view>
 <view class="username">{{item.userName}}</view>
 <view class="more">
-  <view class="little_point"></view>
-  <view class="little_point"></view>
-  <view class="little_point"></view></view>
+  
+  <view class="delete">删除</view>
+</view>
 <view class="date">{{item.date}}</view>
 <view class="detials">{{item.title}}</view>
 <view class="{{item.type=='get'?'tags_get':'tags_lost'}}">{{item.type=='get'?'拾':'丢'}}</view>
