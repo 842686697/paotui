@@ -47,16 +47,18 @@ page{
 .more{
   height: 30rpx;
   width: 80rpx;
-  border: 1px solid black;
-  margin-left: 640rpx;
-  margin-top: 5rpx;
+  position: absolute;
+  left: 674rpx;
+  top: 26rpx;
   border-radius: 30rpx;
+  color: darkgray;
+  font-size: 28rpx;
 }
 .last_chattime{
   height: 30rpx;
   width: 100rpx;
   margin-left: 635rpx;
-  margin-top: 5rpx;
+  margin-top: 60rpx;
   font-size: 26rpx;
   color: darkgray;
 }
@@ -66,7 +68,7 @@ page{
   background-color: red;
   border-radius: 50%;
   margin-left: 685rpx;
-  margin-top: 18rpx;
+  margin-top: 10rpx;
   font-size: 26rpx;
   text-align: center;
   color: white;

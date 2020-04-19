@@ -5,9 +5,8 @@
   <view class="chat_record"><text>wdnmdwdnmd</text>
   </view>
   <view class="more">
-  <view class="little_point"></view>
-  <view class="little_point"></view>
-  <view class="little_point"></view></view>
+  <text>删除</text>
+  </view>
   <view class="last_chattime">10：20</view>
   <view class="unread"><text>7</text></view>
 </view>
