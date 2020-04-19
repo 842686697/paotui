@@ -136,3 +136,8 @@ page{
   line-height: 30rpx;
   font-size: 24rpx;
 }
+.delete{
+  height: 40rpx;
+  width: 70rpx;
+  padding-left:5rpx; 
+}

@@ -4,7 +4,7 @@
 <view class="username">{{item.userName}}</view>
 <view class="more">
   
-  <view class="delete">删除</view>
+  <view class="delete" catchtap="dataDelete" data-id="{{item._id}}">删除</view>
 </view>
 <view class="date">{{item.date}}</view>
 <view class="detials">{{item.title}}</view>

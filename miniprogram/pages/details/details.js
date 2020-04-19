@@ -56,7 +56,6 @@ Page({
       success:res=>{
         const {collection}=this.data;
         const id=this.data.list._id;
-        console.log(id,collection)
         if(res.confirm==true){
           const db=wx.cloud.database();
           db.collection(collection).where({

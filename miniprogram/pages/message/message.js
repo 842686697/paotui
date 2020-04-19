@@ -5,14 +5,54 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    message:[],
+    collection:'message',
+    openid:'',
+    isHost:Boolean
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  getOpenid: function (callback) {
+    //用云函数获取openid
+    wx.cloud.callFunction({
+      name: 'login',
+      success: res => {
+        this.setData({
+          openid: res.result.openid
+        }) 
+        callback();
+      }
+    })
+  },
+  getData:function(){
+    const {collection}=this.data;
+    const openid=this.data.openid;
+    const db=wx.cloud.database();
+    const _=db.command;
+    db.collection(collection).where(_.or([
+      {information:{
+        _openids:{
+          host: openid
+        }
+      }},
+      {information: {
+        _openids: {
+          visitor: openid
+        }
+      }}
+    ])).get({
+      success:res=>{
+        console.log(res);
+        this.setData({
+          message:res.data
+        })
+      }
+    })
+  },
   onLoad: function (options) {
-
+    this.getOpenid(this.getData);
   },
 
   /**

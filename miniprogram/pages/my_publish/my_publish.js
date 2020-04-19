@@ -13,6 +13,36 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  dataDelete:function(e){
+    wx.showModal({
+      title: '提示',
+      content: '确认要删除吗？',
+      cancelText: '取消',
+      cancelColor: '#000000',
+      confirmText: '确定',
+      confirmColor: '#FF0000',
+      success: res => {
+        const { collection } = this.data;
+        const id = e.target.dataset.id;
+        console.log(id, collection)
+        if (res.confirm == true) {
+          const db = wx.cloud.database();
+          db.collection(collection).where({
+            _id: id
+          }).remove({
+            success: res => {
+              this.getData();
+            }
+          })
+        } else {
+
+        }
+      },
+      fail: res => {
+        console.log(res)
+      }
+    })
+  },
   toDetails:function(e){
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
