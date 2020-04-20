@@ -1,0 +1,98 @@
+page{
+
+}
+.box{
+  box-sizing: border-box;
+  height: auto;
+  width: 100%;
+  position:relative;
+  left: 0;
+  top: 0;
+  margin-bottom:30rpx;
+}
+.icon_right{
+  position: absolute;
+  right: 10rpx;
+  top:2rpx;
+  background-color: red;
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.icon_left{
+  position: absolute;
+  left: 10rpx;
+  top:2rpx;
+  background-color: red;
+    height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.name_right{
+  position: absolute;
+  right:120rpx;
+  top:2rpx;
+  color: #848484;
+  font-size: 31rpx;
+}
+.name_left{
+  position: absolute;
+  left:120rpx;
+  top:2rpx;
+  color: #848484;
+  font-size: 31rpx;
+}
+.content_right{
+  float: right;
+  margin: 50rpx 120rpx 0 0;
+  height: auto;
+  width: auto;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  background-color: lightgray;
+  opacity: 0.8;
+  word-wrap:break-word;    
+  word-break:break-all;
+}
+.content_left{
+  float: left;
+  position: relative;
+  margin: 50rpx 120rpx 0 120rpx;
+  height: auto;
+  width: auto;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  background-color: lightgray;
+  opacity: 0.8;
+  word-wrap:break-word;    
+  word-break:break-all;
+}
+.message_box{
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  background: #E6E6E6;
+}
+.message_area{
+  position:absolute;
+  left: 20rpx;
+  top:20rpx;
+  height: 65rpx;
+  width: 550rpx;
+  border-radius: 10rpx;
+  background: white;
+  padding-left: 20rpx;
+}
+.message_button{
+  position:absolute;
+  left: 600rpx;
+  top: 20rpx;
+  height: 65rpx;
+  width: 120rpx;
+  border-radius: 5rpx;
+  background: #04B404;
+  color: white;
+  line-height: 65rpx;
+  text-align: center;
+}

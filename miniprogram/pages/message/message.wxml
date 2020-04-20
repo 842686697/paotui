@@ -1,12 +1,12 @@
-<view class="messages" wx:for="{{message}}">
+<view class="messages" wx:for="{{message}}" bindtap="toChat" data-id="{{item._id}}">
 <image class="icon" src="{{item.information._openids.host==openid?item.information._openids.visitorIcon:item.information._openids.hostIcon}}"></image>
   <view class="username">{{item.information._openids.host==openid?item.information._openids.visitorName:item.information._openids.hostName}}
   </view>
-  <view class="chat_record"><text>wdnmdwdnmd</text>
+  <view class="chat_record"><text>{{item.messages[item.messages.length-1].name}}:{{item.messages[item.messages.length-1].message}}</text>
   </view>
   <view class="more">
   <text>删除</text>
   </view>
-  <view class="last_chattime">10：20</view>
-  <view class="unread"><text>7</text></view>
+  <view class="last_chattime">{{item.messages[item.messages.length-1].time}}</view>
+  <view class="unread">{{item.information.unread}}</view>
 </view>

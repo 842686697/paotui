@@ -1,21 +1,40 @@
-// pages/message/message.js
+// pages/chat/chat.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    message:[],
+    list:[],
     collection:'message',
+    id:'',
     openid:'',
-    isHost:Boolean
+    watcher:null
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  toChat:function(e){
-    wx.navigateTo({
-      url: '/pages/chat/chat?id='+e.currentTarget.dataset.id
+  sendConfirm:function(){
+    
+  },
+  getWatcher:function(){
+    const {collection,id}=this.data;
+    const db=wx.cloud.database();
+    this.setData({
+      watcher: db.collection(collection).where({
+        _id:id
+      }).watch({
+        onChange: snapshot=>{
+          this.getData();
+          console.log('docs\'s changed events', snapshot.docChanges)
+          console.log('query result snapshot after the event', snapshot.docs)
+          console.log('is init data', snapshot.type === 'init')
+        },
+        onError: function (err) {
+          console.error('the watch closed because of error', err)
+        }
+      })
     })
   },
   getOpenid: function (callback) {
@@ -25,38 +44,31 @@ Page({
       success: res => {
         this.setData({
           openid: res.result.openid
-        }) 
+        })
         callback();
       }
     })
   },
   getData:function(){
-    const {collection}=this.data;
-    const openid=this.data.openid;
+    const {collection,id}=this.data;
     const db=wx.cloud.database();
-    const _=db.command;
-    db.collection(collection).where(_.or([
-      {information:{
-        _openids:{
-          host: openid
-        }
-      }},
-      {information: {
-        _openids: {
-          visitor: openid
-        }
-      }}
-    ])).get({
+    db.collection(collection).where({
+      _id:id
+    }).get({
       success:res=>{
         console.log(res);
         this.setData({
-          message:res.data
+          list:res.data[0]
         })
+        console.log(this.data.list)
       }
     })
   },
   onLoad: function (options) {
-    this.getOpenid(this.getData);
+    this.setData({
+      id: options.id
+    })
+    this.getOpenid(this.getWatcher);
   },
 
   /**

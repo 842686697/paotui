@@ -1,0 +1,12 @@
+<view class="box" wx:for="{{list.messages}}">
+  <image class="{{item._openid==openid?'icon_right':'icon_left'}}" src="{{item.icon}}"></image>
+  <view class="{{item._openid==openid?'message_right':'message_left'}}">
+    <view class="{{item._openid==openid?'name_right':'name_left'}}">{{item.name}}</view>
+    <view class="{{item._openid==openid?'content_right':'content_left'}}">{{item.message}}</view>
+  </view>
+  <view class="time_right"></view>
+</view>
+<view class="message_box">
+  <input class="message_area" cursor-spacing="10"></input>
+  <view class="message_button" bindtap="sendConfirm">发送</view>
+</view>

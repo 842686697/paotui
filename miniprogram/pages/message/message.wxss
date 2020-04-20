@@ -18,7 +18,6 @@ page{
   height: 120rpx;
   width: 120rpx;
   border-radius: 50%;
-  border: 1px solid black;
   position: relative;
   margin-top: 7rpx;
   margin-left: 7rpx;
@@ -32,10 +31,10 @@ page{
   float: left;
   left: 20rpx;
   top: 20rpx;
-  color: darkgray;
+  color: black;
 }
 .chat_record{
-  height: 40rpx;
+  height: 60rpx;
   width: 340rpx;
   position: relative;
   float: left;
@@ -43,6 +42,8 @@ page{
   left: -232rpx;
   color: darkgray;
   overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .more{
   height: 30rpx;
@@ -57,7 +58,7 @@ page{
 .last_chattime{
   height: 30rpx;
   width: 100rpx;
-  margin-left: 635rpx;
+  margin-left: 650rpx;
   margin-top: 60rpx;
   font-size: 26rpx;
   color: darkgray;
