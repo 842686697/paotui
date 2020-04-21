@@ -15,11 +15,13 @@ exports.main = async (event, context) => {
   let visitor=event.visitor;
   let visitorIcon= event.visitorIcon;
   let visitorName= event.visitorName;
+  let listId=event.listId;
   try{
     return await db.collection('message').add({
       data: {
         _openid: [event.host, event.visitor],
         information: {
+          listId: listId,
           _openids: {
             host: host,
             hostIcon: hostIcon,

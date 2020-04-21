@@ -11,7 +11,8 @@ Page({
     listSelectStyle:'list_resizeBox',
     regExp:'',
     openid:'',
-    userInfo:[]
+    userInfo:[],
+    messageGet:[]
   },
   /**
    * 生命周期函数--监听页面加载
@@ -48,6 +49,27 @@ Page({
       })
     }
   },
+  confirmData:function(e){
+    const db = wx.cloud.database();
+    let listId = e.currentTarget.dataset.id;
+    let host = e.currentTarget.dataset.openid
+    let visitor = this.data.openid;
+    console.log('host,visitor', host, visitor)
+    db.collection('message').where({
+      _openid: [host, visitor],
+      information: {
+        listId: listId
+      }
+    }).get({
+      success: res => {
+        console.log('data:', res)
+        this.setData({
+          messageGet: res.data
+        })
+        this.toChat(e)
+      }
+    })
+  },
   toChat:function(e){
     wx.showLoading({
       title: '连接中...',
@@ -61,34 +83,28 @@ Page({
     let visitor = openid;
     let visitorName = userInfo.nickName; 
     let visitorIcon = userInfo.avatarUrl;
+    let listId=e.currentTarget.dataset.id;
+    //如果访问者和被回复者一样的话就不上传数据
     if (host == visitor){
       wx.hideLoading();
       wx.showToast({
         title: '连接失败，请勿与自己联系!',
         icon:"none"
       })
+    }
+    //如果该会话已存在也不会再次上传
+    else if(this.data.messageGet.length!=0){
+      console.log('message:',this.data.messageGet)
+      wx.hideLoading();
+      wx.showToast({
+        title: '连接失败，该会话已存在!',
+        icon: "none"
+      })
     }else{
-      // db.collection(chatCollection).add({
-      //   data: {
-      //     _openid: [host,visitor],
-      //     information: {
-      //       _openids: {
-      //         host: host,
-      //         hostIcon: hostIcon,
-      //         hostName: hostName,
-      //         visitor: visitor,
-      //         visitorIcon: visitorIcon,
-      //         visitorName: visitorName
-      //       },
-      //       unread: 0
-      //     },
-      //     messages: []
-      //   }
-      // })
-
       wx.cloud.callFunction({
         name:'addOpenid',
         data:{
+          listId: listId,
           host: host,
           hostIcon: hostIcon,
           hostName: hostName,
@@ -98,9 +114,14 @@ Page({
         },
         success:res=>{
           console.log(res);
+        },
+        fail:res=>{
+          wx.hideLoading();
+          wx.showToast({
+            title: '连接失败'
+          })
         }
       })
-
       wx.hideLoading();
       wx.showToast({
         title: '连接成功'

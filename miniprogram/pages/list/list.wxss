@@ -139,7 +139,7 @@ page{
 .list_chat{
   position: absolute;
   left: 500rpx;
-  top:20rpx;
+  top:40rpx;
   font-size: 33rpx;
   text-align: center;
   line-height: 80rpx;

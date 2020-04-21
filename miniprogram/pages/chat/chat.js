@@ -84,6 +84,18 @@ Page({
     this.setData({
       value: ''
     })
+    this.pageScrollToBottom()
+  },
+  // 使页面滚动到底部
+  pageScrollToBottom: function () {
+    wx.createSelectorQuery().select('.box').boundingClientRect(res=>{
+          let timer = setTimeout(result=>{
+            let len = this.data.list.messages.length
+            wx.pageScrollTo({
+              scrollTop: res.height * len
+            })
+      },100)
+    }).exec()
   },
   getWatcher:function(){
     const {collection,id}=this.data;
@@ -93,7 +105,7 @@ Page({
         _id:id
       }).watch({
         onChange: snapshot=>{
-          this.getData();
+          this.getData(this.pageScrollToBottom);
           console.log('docs\'s changed events', snapshot.docChanges)
           console.log('query result snapshot after the event', snapshot.docs)
           console.log('is init data', snapshot.type === 'init')
@@ -140,7 +152,7 @@ Page({
       })
     }
   },
-  getData:function(){
+  getData:function(callback){
     const {collection,id}=this.data;
     const db=wx.cloud.database();
     db.collection(collection).where({
@@ -152,7 +164,7 @@ Page({
         this.setData({
           list:res.data[0]
         })
-        console.log(this.data.list)
+        callback()
       }
     })
   },
@@ -168,7 +180,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
