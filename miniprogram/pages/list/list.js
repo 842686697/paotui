@@ -68,22 +68,39 @@ Page({
         icon:"none"
       })
     }else{
-      db.collection(chatCollection).add({
-        data: {
-          information: {
-            _openids: {
-              host: host,
-              hostIcon: hostIcon,
-              hostName: hostName,
-              visitor: visitor,
-              visitorIcon: visitorIcon,
-              visitorName: visitorName
-            },
-            unread: 0
-          },
-          messages: []
+      // db.collection(chatCollection).add({
+      //   data: {
+      //     _openid: [host,visitor],
+      //     information: {
+      //       _openids: {
+      //         host: host,
+      //         hostIcon: hostIcon,
+      //         hostName: hostName,
+      //         visitor: visitor,
+      //         visitorIcon: visitorIcon,
+      //         visitorName: visitorName
+      //       },
+      //       unread: 0
+      //     },
+      //     messages: []
+      //   }
+      // })
+
+      wx.cloud.callFunction({
+        name:'addOpenid',
+        data:{
+          host: host,
+          hostIcon: hostIcon,
+          hostName: hostName,
+          visitor: visitor,
+          visitorName: visitorName,
+          visitorIcon: visitorIcon,
+        },
+        success:res=>{
+          console.log(res);
         }
       })
+
       wx.hideLoading();
       wx.showToast({
         title: '连接成功'

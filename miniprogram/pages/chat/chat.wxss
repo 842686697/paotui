@@ -1,5 +1,5 @@
 page{
-
+  padding-bottom: 80rpx;
 }
 .box{
   box-sizing: border-box;
