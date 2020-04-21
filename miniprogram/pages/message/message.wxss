@@ -49,9 +49,9 @@ page{
 .more{
   height: 30rpx;
   width: 80rpx;
-  position: absolute;
-  left: 674rpx;
-  top: 26rpx;
+  position: relative;
+  left: 667rpx;
+  top: -110rpx;
   border-radius: 30rpx;
   color: darkgray;
   font-size: 28rpx;
@@ -60,7 +60,7 @@ page{
   height: 30rpx;
   width: 100rpx;
   margin-left: 650rpx;
-  margin-top: 60rpx;
+  margin-top: 30rpx;
   font-size: 26rpx;
   color: darkgray;
 }
