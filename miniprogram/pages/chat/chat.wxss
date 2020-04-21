@@ -97,3 +97,8 @@ page{
   line-height: 65rpx;
   text-align: center;
 }
+.first{
+  margin: 20rpx auto;
+  color: lightgray;
+  font-size:33rpx;
+}

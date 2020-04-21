@@ -1,3 +1,4 @@
+<view wx:if="{{list.messages.length==0}}" class="first">来说句话吧!</view>
 <view class="box" wx:for="{{list.messages}}">
   <image class="{{item._openid==openid?'icon_right':'icon_left'}}" src="{{item.icon}}"></image>
   <view class="{{item._openid==openid?'message_right':'message_left'}}">

@@ -89,12 +89,12 @@ Page({
   // 使页面滚动到底部
   pageScrollToBottom: function () {
     wx.createSelectorQuery().select('.box').boundingClientRect(res=>{
-          let timer = setTimeout(result=>{
-            let len = this.data.list.messages.length
-            wx.pageScrollTo({
-              scrollTop: res.height * len
-            })
-      },100)
+      if (res!=null){
+        let len = this.data.list.messages.length
+        wx.pageScrollTo({
+          scrollTop: res.height * len
+        }) 
+      }
     }).exec()
   },
   getWatcher:function(){

@@ -13,6 +13,24 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  chatDelete:function(e){
+    wx.showModal({
+      title: '提示',
+      content: '确认删除会话吗，双方的会话框都会被删除',
+      success:res=>{
+        const db = wx.cloud.database();
+        const { collection } = this.data;
+        let id = e.currentTarget.dataset.id;
+        console.log('id',id)
+        db.collection(collection).doc(id).remove({
+          success: res => {
+            console.log('delete:',res)
+            this.getData()
+          }
+        })
+      }
+    })
+  },
   toChat:function(e){
     wx.navigateTo({
       url: '/pages/chat/chat?id='+e.currentTarget.dataset.id

@@ -4,7 +4,7 @@
   </view>
   <view class="chat_record"><text>{{item.messages[item.messages.length-1].name}}:{{item.messages[item.messages.length-1].message}}</text>
   </view>
-  <view class="more">
+  <view class="more" catchtap="chatDelete" data-id="{{item._id}}">
   <text>删除</text>
   </view>
   <view class="last_chattime">{{item.messages[item.messages.length-1].time}}</view>
