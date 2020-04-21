@@ -72,7 +72,7 @@ Page({
         data: {
           information: {
             _openids: {
-              host: openid,
+              host: host,
               hostIcon: hostIcon,
               hostName: hostName,
               visitor: visitor,
@@ -83,6 +83,10 @@ Page({
           },
           messages: []
         }
+      })
+      wx.hideLoading();
+      wx.showToast({
+        title: '连接成功'
       })
     }
   },

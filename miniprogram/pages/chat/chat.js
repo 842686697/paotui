@@ -60,13 +60,14 @@ Page({
     }, res => {
       const db = wx.cloud.database();
       const _=db.command;
-      const { collection, openid, icon, name } = this.data;
+      const { collection, openid, icon, name ,id } = this.data;
       let date=this.getDate();
       let time=this.getTime();
       let content=res.value;
-      let id=this.data.id;
       //通过commond操作符来添加数据，update试过，云函数也试过但没起效
-      db.collection(collection).doc(id).update({
+      db.collection(collection).where({
+        _id:id
+      }).update({
         data:{
           messages: _.push({
             _openid: openid,

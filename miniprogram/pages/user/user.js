@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   register:function(e){
+    console.log(e)
     if (!this.data.hasLogin && e._userTap==true) {
       this.setData({
         hasLogin: true,
