@@ -11,9 +11,12 @@
     <view class="list_message">{{item.title}}</view>
   </view>
   <view class="{{item.type=='get'?'list_get':'list_loss'}} float-">{{item.type=='get'?'拾':'丢'}}</view>
-  <image style="float:right;" class="list_img" src="{{item.imgId[0]}}" wx:if="{{resizeIndex!=index}}"></image>
 
+  <block wx:if="{{resizeIndex!=index}}">
+  <image style="float:right;" class="list_img" src="{{item.imgId[0]}}" ></image>
+  </block>
   <block wx:else>
+  <view class="list_chat" catchtap="toChat" data-openid="{{item._openid}}" data-icon="{{item.icon}}" data-name="{{item.userName}}">联系他</view>
   <view class="list_content" >{{item.content}}</view>
   <view class="list_imgs">
     <image data-id="{{item._id}}" wx:for-item="items" wx:for = "{{item.imgId}}" data-index="{{index}}" class="list_resizeImg" src="{{items}}" catchtap="viewImgs"></image>

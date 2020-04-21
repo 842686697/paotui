@@ -136,3 +136,16 @@ page{
   opacity: 0.8;
   box-shadow: 10rpx 10rpx 10rpx #888888;
 }
+.list_chat{
+  position: absolute;
+  left: 500rpx;
+  top:20rpx;
+  font-size: 33rpx;
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 150rpx;
+  color: #F2F2F2;
+  background: #31B404;
+  border-radius: 10rpx;
+}

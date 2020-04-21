@@ -35,6 +35,7 @@ Page({
     const openid=this.data.openid;
     const db=wx.cloud.database();
     const _=db.command;
+    console.log(openid);
     db.collection(collection).where(_.or([
       {information:{
         _openids:{
@@ -70,7 +71,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData()
   },
 
   /**

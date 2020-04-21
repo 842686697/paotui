@@ -3,16 +3,89 @@ Page({
   data: {
     list:[],
     collection:'list',
+    chatCollection:'message',
     groupId:'',
     resizeIndex:-1,
     unLoginIcon:'/images/unloginIcon.png',
     listUnSelectStyle:'list_box',
     listSelectStyle:'list_resizeBox',
-    regExp:''
+    regExp:'',
+    openid:'',
+    userInfo:[]
   },
   /**
    * 生命周期函数--监听页面加载
    */
+  getOpenid: function () {
+    wx.cloud.callFunction({
+      name: 'login',
+      success: res => {
+        this.setData({
+          openid: res.result.openid
+        })
+      }
+    })
+  },
+  getAuth: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+    }
+    else {
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: res => {
+                this.setData({
+                  userInfo: res.userInfo
+                })
+              }
+            })
+          }
+        }
+      })
+    }
+  },
+  toChat:function(e){
+    wx.showLoading({
+      title: '连接中...',
+      mask:true
+    })
+    const db=wx.cloud.database();
+    const { chatCollection,openid,userInfo}=this.data;
+    let host=e.currentTarget.dataset.openid
+    let hostIcon = e.currentTarget.dataset.icon;
+    let hostName = e.currentTarget.dataset.name;
+    let visitor = openid;
+    let visitorName = userInfo.nickName; 
+    let visitorIcon = userInfo.avatarUrl;
+    if (host == visitor){
+      wx.hideLoading();
+      wx.showToast({
+        title: '连接失败，请勿与自己联系!',
+        icon:"none"
+      })
+    }else{
+      db.collection(chatCollection).add({
+        data: {
+          information: {
+            _openids: {
+              host: openid,
+              hostIcon: hostIcon,
+              hostName: hostName,
+              visitor: visitor,
+              visitorIcon: visitorIcon,
+              visitorName: visitorName
+            },
+            unread: 0
+          },
+          messages: []
+        }
+      })
+    }
+  },
   search:function(e){
     let reg;
     if(e.detail.value==''){
@@ -118,6 +191,8 @@ Page({
     })
   },
   onLoad: function (options) {
+    this.getAuth();
+    this.getOpenid();
     this.getData();
   },
 

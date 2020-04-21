@@ -39,11 +39,12 @@ page{
   position: relative;
   float: left;
   top: 70rpx;
-  left: -232rpx;
+  left: -226rpx;
   color: darkgray;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
+  font-size: 30rpx;
 }
 .more{
   height: 30rpx;

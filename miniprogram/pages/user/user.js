@@ -17,12 +17,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   register:function(e){
-    if (!this.data.hasLogin) {
+    if (!this.data.hasLogin && e._userTap==true) {
       this.setData({
         hasLogin: true,
         icon: e.detail.userInfo.avatarUrl,
         userInfo: e.detail.userInfo,
         nickName:e.detail.userInfo.nickName
+      })
+    }else{
+      wx.showToast({
+        title: '已拒绝授权,无法登录',
+        icon:'none'
       })
     }
   },
