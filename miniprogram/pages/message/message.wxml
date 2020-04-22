@@ -1,4 +1,11 @@
-<view class="messages" wx:for="{{message}}" bindtap="toChat" data-id="{{item._id}}">
+<block wx:if="{{!hasLogin}}">
+  <view class="unLogin">还未登录</view>
+</block>
+<block wx:else>
+  <view class="hasLogin">已登陆</view>
+</block>
+<block wx:if="{{message.length!=0&&hasLogin}}" >
+<view class="messages" wx:key="_id" wx:for="{{message}}" bindtap="toChat" data-id="{{item._id}}">
 <image class="icon" src="{{item.information._openids.host==openid?item.information._openids.visitorIcon:item.information._openids.hostIcon}}"></image>
   <view class="username">{{item.information._openids.host==openid?item.information._openids.visitorName:item.information._openids.hostName}}
   </view>
@@ -10,3 +17,7 @@
   <view class="last_chattime">{{item.messages[item.messages.length-1].time}}</view>
   <view class="unread">{{item.information.unread}}</view>
 </view>
+</block>
+<block wx:elif="{{message.length==0&&hasLogin}}">
+  <view class="noData">暂无消息</view>
+</block>

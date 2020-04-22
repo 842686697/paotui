@@ -17,7 +17,7 @@ App({
     }
     this.globalData = {
       userInfo:null,
-      openid:null
+      openid:''
     }
     wx.getSetting({
       success: res => {

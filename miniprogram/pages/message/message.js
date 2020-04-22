@@ -1,4 +1,4 @@
-// pages/message/message.js
+const app=getApp()
 Page({
 
   /**
@@ -8,26 +8,40 @@ Page({
     message:[],
     collection:'message',
     openid:'',
-    isHost:Boolean
+    isHost:Boolean,
+    hasLogin:false
   },
   /**
    * 生命周期函数--监听页面加载
    */
+  hasLogin:function(){
+    if (app.globalData.userInfo){
+      this.setData({
+        hasLogin:true
+      })
+    }else{
+      this.setData({
+        hasLogin: false
+      })
+    }
+  },
   chatDelete:function(e){
     wx.showModal({
       title: '提示',
       content: '确认删除会话吗，双方的会话框都会被删除',
       success:res=>{
-        const db = wx.cloud.database();
-        const { collection } = this.data;
-        let id = e.currentTarget.dataset.id;
-        console.log('id',id)
-        db.collection(collection).doc(id).remove({
-          success: res => {
-            console.log('delete:',res)
-            this.getData()
-          }
-        })
+        if(res.confirm==true){
+          const db = wx.cloud.database();
+          const { collection } = this.data;
+          let id = e.currentTarget.dataset.id;
+          console.log('id', id)
+          db.collection(collection).doc(id).remove({
+            success: res => {
+              console.log('delete:', res)
+              this.getData()
+            }
+          })
+        }
       }
     })
   },
@@ -71,6 +85,8 @@ Page({
         this.setData({
           message:res.data
         })
+        //确认获得的数据与app判断是否显示数据
+        this.hasLogin()
       }
     })
   },

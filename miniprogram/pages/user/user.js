@@ -18,7 +18,9 @@ Page({
    */
   register:function(e){
     console.log(e)
-    if (!this.data.hasLogin && e._userTap==true) {
+    if (!this.data.hasLogin && e.detail.userInfo) {
+      app.globalData.userInfo=e.detail.userInfo
+      console.log('app.globaldata:',app.globalData)
       this.setData({
         hasLogin: true,
         icon: e.detail.userInfo.avatarUrl,

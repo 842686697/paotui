@@ -66,7 +66,14 @@ Page({
         this.setData({
           messageGet: res.data
         })
-        this.toChat(e)
+        if(app.globalData.userInfo){
+          this.toChat(e)
+        }else{
+          wx.showToast({
+            title: '你还未登录，不能进行回复操作',
+            icon:'none'
+          })
+        }
       }
     })
   },
@@ -113,7 +120,13 @@ Page({
           visitorIcon: visitorIcon,
         },
         success:res=>{
-          console.log(res);
+          wx.hideLoading();
+          wx.showToast({
+            title: '连接成功'
+          })
+          wx.switchTab({
+            url: '/pages/message/message',
+          })
         },
         fail:res=>{
           wx.hideLoading();
@@ -121,10 +134,6 @@ Page({
             title: '连接失败'
           })
         }
-      })
-      wx.hideLoading();
-      wx.showToast({
-        title: '连接成功'
       })
     }
   },
