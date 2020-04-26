@@ -26,11 +26,12 @@ exports.main = async (event, context) => {
             host: host,
             hostIcon: hostIcon,
             hostName: hostName,
+            hostUnread:0,
+            visitorUnread:0,
             visitor: visitor,
             visitorIcon: visitorIcon,
             visitorName: visitorName
-          },
-          unread: 0
+          }
         },
         messages: []
       },

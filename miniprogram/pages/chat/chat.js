@@ -18,6 +18,29 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  clearUnread:function(){
+    //确认unread对方
+    const { collection, id, openid } = this.data;
+    const db = wx.cloud.database();
+    let unread = '';
+    if (openid == this.data.list.information._openids.host) {
+      unread = 'visitorUnread'
+    } else {
+      unread = 'hostUnread'
+    }
+    //修改数据未读为0
+    db.collection(collection).where({
+      _id: id
+    }).update({
+      data: {
+        information: {
+          _openids: {
+            [unread]: 0
+          }
+        }
+      }
+    })
+  },
   getDate: function () {
     //获取时间拼成数字
     let date = new Date();
@@ -47,12 +70,12 @@ Page({
     let time = hours.toString() + ':' + mins.toString();
     return time;
   },
-  addData:function(newMessage){
-    let messages=this.data.list.messages;
-    messages.push(newMessage);
-    console.log(messages);
-    return messages
-  },
+  // addData:function(newMessage){
+  //   let messages=this.data.list.messages;
+  //   messages.push(newMessage);
+  //   console.log(messages);
+  //   return messages
+  // },
   sendConfirm:function(){
     let sq = wx.createSelectorQuery();
     sq.select(".message_area").fields({
@@ -61,14 +84,26 @@ Page({
       const db = wx.cloud.database();
       const _=db.command;
       const { collection, openid, icon, name ,id } = this.data;
+      let unread='';
+      //确认unread添加的一方
+      if(openid==this.data.list.information._openids.host){
+        unread='hostUnread'
+      }else{
+        unread = 'visitorUnread'
+      }
       let date=this.getDate();
       let time=this.getTime();
       let content=res.value;
-      //通过commond操作符来添加数据，update试过，云函数也试过但没起效
+      //通过commond操作符来添加数据，update试过，云函数也试过但没起效,后面察觉是没有插入openid所以没有修改权限
       db.collection(collection).where({
         _id:id
       }).update({
         data:{
+          information:{
+            _openids:{
+              [unread]:_.inc(1)
+            }
+          },
           messages: _.push({
             _openid: openid,
             date: date,
@@ -105,7 +140,7 @@ Page({
         _id:id
       }).watch({
         onChange: snapshot=>{
-          this.getData(this.pageScrollToBottom);
+          this.getData(this.pageScrollToBottom,this.clearUnread);
           console.log('docs\'s changed events', snapshot.docChanges)
           console.log('query result snapshot after the event', snapshot.docs)
           console.log('is init data', snapshot.type === 'init')
@@ -152,9 +187,10 @@ Page({
       })
     }
   },
-  getData:function(callback){
-    const {collection,id}=this.data;
+  getData:function(callback1,callback2){
+    const {collection,id,openid}=this.data;
     const db=wx.cloud.database();
+    //获取数据
     db.collection(collection).where({
       _id:id
     }).get({
@@ -164,9 +200,11 @@ Page({
         this.setData({
           list:res.data[0]
         })
-        callback()
+        callback2();
+        callback1();
       }
     })
+
   },
   onLoad: function (options) {
     this.getAuth()

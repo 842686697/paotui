@@ -19,19 +19,27 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
+    "selectedColor":"#24af08",
     "list": [
       {
         "pagePath": "pages/list/list",
-        "text": "主页"
+        "text": "主页",
+        "iconPath":"/images/main-unselect.png",
+        "selectedIconPath":"/images/main-select.png"
       },
       {
         "pagePath": "pages/message/message",
-        "text": "信息"
+        "text": "信息",
+        "iconPath": "/images/chat-unselect.png",
+        "selectedIconPath": "/images/chat-select.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "个人"
+        "text": "个人",
+        "iconPath": "/images/user-unselect.png",
+        "selectedIconPath": "/images/user-select.png"
       }
     ]
   }
+
 }
