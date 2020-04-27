@@ -28,7 +28,6 @@ Page({
     } else {
       unread = 'hostUnread'
     }
-    console.log('unread',unread)
     //修改数据未读为0
     db.collection(collection).where({
       _id: id
@@ -137,6 +136,7 @@ Page({
   getWatcher:function(){
     const {collection,id}=this.data;
     const db=wx.cloud.database();
+    const watcher=
     this.setData({
       watcher: db.collection(collection).where({
         _id:id
@@ -234,16 +234,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.data.watcher.close()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    this.setData({
-      watch:null
-    })
+    this.data.watcher.close()
   },
 
   /**
