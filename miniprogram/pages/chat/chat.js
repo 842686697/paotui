@@ -20,26 +20,27 @@ Page({
    */
   clearUnread:function(){
     //确认unread对方
-    const { collection, id, openid } = this.data;
-    const db = wx.cloud.database();
-    let unread = '';
-    if (openid == this.data.list.information._openids.host) {
-      unread = 'visitorUnread'
-    } else {
-      unread = 'hostUnread'
-    }
-    //修改数据未读为0
-    db.collection(collection).where({
-      _id: id
-    }).update({
-      data: {
-        information: {
-          _openids: {
-            [unread]: 0
-          }
-        }
-      }
-    })
+    // const { collection, id, openid } = this.data;
+    // const db = wx.cloud.database();
+    // let unread = '';
+    // if (openid == this.data.list.information._openids.host) {
+    //   unread = 'visitorUnread'
+    // } else {
+    //   unread = 'hostUnread'
+    // }
+    // console.log('unread',unread)
+    // //修改数据未读为0
+    // db.collection(collection).where({
+    //   _id: id
+    // }).update({
+    //   data: {
+    //     information: {
+    //       _openids: {
+    //         [unread]: 0
+    //       }
+    //     }
+    //   }
+    // })
   },
   getDate: function () {
     //获取时间拼成数字
@@ -116,6 +117,7 @@ Page({
         }
       })
     }).exec();
+    //输入框
     this.setData({
       value: ''
     })
@@ -239,7 +241,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.setData({
+      watch:null
+    })
   },
 
   /**
