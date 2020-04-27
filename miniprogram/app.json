@@ -12,7 +12,7 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#66B3FF",
+    "navigationBarBackgroundColor": "#2ECCFA",
     "navigationBarTitleText": "计科失物招领",
     "navigationBarTextStyle": "black"
   },
@@ -29,7 +29,7 @@
       },
       {
         "pagePath": "pages/message/message",
-        "text": "信息",
+        "text": "消息",
         "iconPath": "/images/chat-unselect.png",
         "selectedIconPath": "/images/chat-select.png"
       },

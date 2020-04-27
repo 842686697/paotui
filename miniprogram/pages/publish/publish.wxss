@@ -26,7 +26,7 @@ page{
 .top_username{
   box-sizing: border-box;
   padding: 0 20rpx 0;
-  color: #1AFD9C
+  color: black
 }
 .top_time{
   box-sizing: border-box;
@@ -47,7 +47,6 @@ page{
 }
 .bot_text_title{
   padding: 20rpx;
-  font-size: 45rpx;
   height: 10%;
 }
 .bot_text_area{
