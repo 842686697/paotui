@@ -14,7 +14,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2ECCFA",
     "navigationBarTitleText": "计科失物招领",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",

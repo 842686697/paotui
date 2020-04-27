@@ -2,13 +2,12 @@
 <image src="{{userIcon}}" class="top_icon float-"></image>
 <view class="top_message_box float-">
   <view class="top_username">{{userName}}</view>
-  <view class="top_time">时间</view>
 </view>
 </view>
 <view class="bot_box">
 <view class="bot_text_box">
-  <input class="bot_text_title" placeholder="标题(限制10字)" maxlength="10"></input>
-  <textarea class="bot_text_area" maxlength="140" placeholder="请输入捡到/丢失时间，详细信息等等内容(限制140字)"></textarea>
+  <input class="bot_text_title" placeholder="标题" maxlength="10"></input>
+  <textarea class="bot_text_area" maxlength="140" placeholder="内容"></textarea>
 </view>
 <view class="bot_tags_box">
   <view class="bot_tags_type float-">
