@@ -13,17 +13,21 @@ Page({
     userName:'',
     collection:'list',
     imgs:[],
-    imgId:[]
+    imgId:[],
+    tags:'拾'
   },
-  chooseGet:function(){
-    this.setData({
-      choose:true
-    })
-  },
-  chooseLoss: function () {
-    this.setData({
-      choose: false
-    })
+  chooseChange:function(){
+    if(this.data.choose){
+      this.setData({
+        choose: false,
+        tags:'丢'
+      })
+    }else{
+      this.setData({
+        choose: true,
+        tags: '拾'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
