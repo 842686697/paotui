@@ -86,6 +86,7 @@ Page({
         }
       ])).watch({
         onChange: res => {
+          console.log('监听开始');
           this.getData()
         },
         onError: res => {
@@ -145,14 +146,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.data.watcher.close()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.data.watcher.close()
   },
 
   /**
