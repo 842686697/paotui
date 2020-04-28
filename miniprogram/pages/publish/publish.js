@@ -14,7 +14,7 @@ Page({
     collection:'list',
     imgs:[],
     imgId:[],
-    tags:'拾'
+    tags:'丢'
   },
   chooseChange:function(){
     if(this.data.choose){
@@ -135,13 +135,30 @@ Page({
         properties: ['value']
       }, res => {
         data.title=res.value
-        callback(data)
+        console.log('res.value',res.value)
+        if(data.title==''){
+          wx.hideLoading();
+          wx.showToast({
+            title: '请输入标题',
+            icon:'none'
+          })
+        }else{
+          callback(data)
+        }
       }).exec();
       sq.select(".bot_text_area").fields({
         properties: ['value']
       }, res => {
         data.content = res.value
-        callback(data)
+        if (data.content == '') {
+          wx.hideLoading();
+          wx.showToast({
+            title: '请输入内容',
+            icon: 'none'
+          })
+        } else {
+          callback(data)
+        }
       }).exec();
       
     }

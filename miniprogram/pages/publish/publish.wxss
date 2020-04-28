@@ -75,14 +75,22 @@ page{
 .choose{
   background:white;
   transition: all 0.5s;
-  margin-left: 0;
+  margin:5% 5% 5% 5%;
   box-shadow: 5rpx 0 15rpx #888888;
 }
 .unchoose{
   background:white;
   transition: all 0.5s;
-  margin-left: 50%;
+  margin:5% 5% 5% 45%;
   box-shadow: -5rpx 0 15rpx #888888;
+}
+.bot_type_get{
+  height: 80%;
+  width:  50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 50rpx;
 }
 .bot_tags_img{
   font-size: 30rpx;
@@ -91,12 +99,13 @@ page{
   justify-content:center;
   background: lightgray
 }
-.bot_type_get{
-  box-sizing: border-box;
-  height: 100%;
-  width:  50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius: 50rpx;
+.confirm_button{
+  height:100rpx;
+  line-height:100rpx;
+  width:250rpx;
+  text-align:center;
+  border-radius:50rpx;
+  background:lightblue;
+  margin:150rpx auto;
+  color:white;
 }

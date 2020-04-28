@@ -11,13 +11,13 @@
 </view>
 <view class="bot_tags_box">
   <view class="bot_tags_type float-" bindtap="chooseChange">
-    <view class="bot_type_get  float- {{choose?chooseClass:unChooseClass}}" >{{tags}}</view>
+    <view class="bot_type_get {{choose?chooseClass:unChooseClass}}" >{{tags}}</view>
   </view>
   <button style="height: 100%;width:70%;border-radius:20rpx;" bindtap="upload" class="bot_tags_img float-">点击上传图片(最多3张)</button>
 </view>
 </view>
 
-<button style="height:100rpx;width:400rpx;border-radius:50rpx;background:#1AFD9C;margin-top:150rpx;color:white" bindtap="sendConfirm">提交</button>
+<view class="confirm_button" bindtap="sendConfirm">提交</view>
 
 
 
