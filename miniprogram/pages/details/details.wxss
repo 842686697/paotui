@@ -10,7 +10,6 @@ page{
 .icon{
   height: 120rpx;
   width: 120rpx;
-  border: 1px solid black;
   border-radius: 50%;
   margin-top: 30rpx;
   margin-left: 30rpx;
@@ -24,10 +23,9 @@ page{
   margin-top: 105rpx;
   margin-left: -174rpx;
   padding:2rpx 15rpx 2rpx;
-  color: white;
+  color: lightgray;
   text-align: center;
   border-radius: 20rpx;
-  background-color: deepskyblue;
 }
 .tags_lost{
   height: 45rpx;
@@ -65,20 +63,26 @@ page{
   color: black;
 }
 .title{
-  position: absolute;
-  left:80rpx;
-  top: 180rpx;
+    box-sizing: border-box;
+  margin-top: 160rpx;
+  padding: 20rpx;
+  height: 8%;
+  width:100%;
   color: darkgray;
+  border-radius: 20rpx;  
+  border: 4rpx solid lightgray;
 }
 .content{
-  margin-top: 240rpx;
-  margin-left: 80rpx;
+  margin-top: 10rpx;
+    box-sizing: border-box;
   color: darkgray;
   word-wrap:break-word; 
   word-break:break-all;
-  height: 440rpx;
-  width: 620rpx;
-  border-bottom: 4rpx lightgray solid;
+    padding: 20rpx;
+  height: 40%;
+  width:100%;
+  border-radius: 20rpx;  
+  border: 4rpx solid lightgray;
 }
 .list_resizeImg{
   margin: 20rpx 0 20rpx 40rpx;
@@ -102,6 +106,7 @@ page{
 }
 .unfinish{
     height: 80rpx;
+        width: 300rpx;
     line-height: 80rpx;
     text-align: center;
     margin: 15rpx auto;
@@ -112,10 +117,10 @@ page{
     background-color: #DBA901;
     color: white;
     font-size: 35rpx;
-    opacity: 0.6;
 }
 .finish{
     height: 80rpx;
+        width: 300rpx;
     line-height: 80rpx;
     text-align: center;
     margin: 15rpx auto;
@@ -126,5 +131,4 @@ page{
     background-color: lightgreen;
     color: white;
     font-size: 35rpx;
-    opacity: 0.6;
 }

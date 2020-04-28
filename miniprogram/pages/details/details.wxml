@@ -8,6 +8,5 @@
 <view class="content">
 {{list.content}}</view>
 <image wx:for="{{list.imgId}}" data-index="{{index}}" class="list_resizeImg" src="{{item}}"></image>
-<view class="{{list.isFinish==true?'finish':'unfinish'}}" bindtap="{{list.isFinish==true?'':'setFinish'}}">{{list.isFinish==true?'已完成':'未完成,点击设置为已完成'}}</view>
-<view class="delete" bindtap="dataDelete">删除该发布信息</view>
+<view class="{{list.isFinish==true?'finish':'unfinish'}}" bindtap="{{list.isFinish==true?'':'setFinish'}}">{{list.isFinish==true?'已完成':'确认完成'}}</view>
 </view>

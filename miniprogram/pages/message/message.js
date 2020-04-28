@@ -9,7 +9,8 @@ Page({
     collection:'message',
     openid:'',
     isHost:Boolean,
-    hasLogin:false
+    hasLogin:false,
+    watcher:null
   },
   /**
    * 生命周期函数--监听页面加载
@@ -62,6 +63,38 @@ Page({
       }
     })
   },
+  getWatcher:function(){
+    const { collection } = this.data;
+    const openid = this.data.openid;
+    const db = wx.cloud.database();
+    const _ = db.command;
+    this.setData({
+      watcher: db.collection(collection).where(_.or([
+        {
+          information: {
+            _openids: {
+              host: openid
+            }
+          }
+        },
+        {
+          information: {
+            _openids: {
+              visitor: openid
+            }
+          }
+        }
+      ])).watch({
+        onChange: res => {
+          this.getData()
+        },
+        onError: res => {
+          console.log('监听报错')
+        }
+      })
+    })
+    
+  },
   getData:function(){
     const {collection}=this.data;
     const openid=this.data.openid;
@@ -91,7 +124,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    this.getOpenid(this.getData);
+    this.getOpenid(this.getWatcher);
   },
 
   /**
