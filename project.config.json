@@ -1,98 +1,124 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"enhance": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
-	"appid": "wxd578d95b2cf3452b",
-	"projectname": "%E6%96%B0%E9%A1%B9%E7%9B%AE",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "pages/chooseLib/chooseLib",
-					"pathName": "pages/chooseLib/chooseLib",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "pages/list/list",
-					"pathName": "pages/list/list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/user",
-					"pathName": "pages/user/user",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/list/list",
-					"pathName": "pages/list/list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/message/message",
-					"pathName": "pages/message/message",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/details/detials",
-					"pathName": "pages/details/detials",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/details/details",
-					"pathName": "pages/details/details",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.10.4",
+  "appid": "wxd578d95b2cf3452b",
+  "projectname": "%E6%96%B0%E9%A1%B9%E7%9B%AE",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/chooseLib/chooseLib",
+          "pathName": "pages/chooseLib/chooseLib",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "pages/list/list",
+          "pathName": "pages/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/details/details",
+          "pathName": "pages/details/details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/my_publish/my_publish",
+          "pathName": "pages/my_publish/my_publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/chat/chat",
+          "pathName": "pages/chat/chat",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

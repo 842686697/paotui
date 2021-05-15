@@ -86,7 +86,7 @@ Page({
         }
       ])).watch({
         onChange: res => {
-          console.log('监听开始');
+          console.log('message监听开始');
           this.getData()
         },
         onError: res => {

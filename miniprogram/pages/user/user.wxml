@@ -9,8 +9,7 @@
       </block>
     </view>
     <view class="user_message_box float-">
-      <view class="user_message">求助：10</view>
-      <view class="user_message">帮助：10</view>
+      <view class="user_message"></view>
     </view>
   </view>
 </view>

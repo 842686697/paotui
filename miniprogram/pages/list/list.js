@@ -11,7 +11,7 @@ Page({
     listSelectStyle:'list_resizeBox',
     regExp:'',
     openid:'',
-    userInfo:[],
+    userInfo:null,
     messageGet:[]
   },
   /**
@@ -54,7 +54,6 @@ Page({
     let listId = e.currentTarget.dataset.id;
     let host = e.currentTarget.dataset.openid
     let visitor = this.data.openid;
-    console.log('host,visitor', host, visitor)
     db.collection('message').where({
       _openid: [host, visitor],
       information: {
@@ -124,8 +123,8 @@ Page({
           wx.showToast({
             title: '连接成功'
           })
-          wx.switchTab({
-            url: '/pages/message/message',
+          wx.navigateTo({
+            url: '/pages/chat/chat?id='+res.result._id,
           })
         },
         fail:res=>{
@@ -179,21 +178,21 @@ Page({
         list:[]
       })
       //两次查询，一次查询title，一次查询content
-      db.collection(collection).where({
-        content: db.RegExp({
-          regexp: regExp,
-          options: 'i'
-        })
-      }).get({
-        success: res => {
-          let newlist = this.data.list;
-          newlist =newlist.concat(res.data)
-          this.setData({
-            list: newlist
-          })
+      // db.collection(collection).where({
+      //   content: db.RegExp({
+      //     regexp: regExp,
+      //     options: 'i'
+      //   })
+      // }).get({
+      //   success: res => {
+      //     let newlist = this.data.list;
+      //     newlist =newlist.concat(res.data)
+      //     this.setData({
+      //       list: newlist
+      //     })
 
-        }
-      })
+      //   }
+      // })
       db.collection(collection).where({
         title: db.RegExp({
           regexp: regExp,
@@ -237,9 +236,16 @@ Page({
     }
   },
   toPublish:function(){
-    wx.navigateTo({
-      url: '/pages/publish/publish',
-    })
+    if (!app.globalData.userInfo){
+      wx.showToast({
+        title: '请登陆后再尝试',
+        icon:'none'
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/publish/publish',
+      })
+    }
   },
   onLoad: function (options) {
     this.getAuth();

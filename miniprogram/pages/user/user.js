@@ -35,9 +35,16 @@ Page({
     }
   },
   toMyPublish:function(){
-    wx.navigateTo({
-      url: '/pages/my_publish/my_publish'
-    })
+    if (!this.data.userInfo){
+      wx.showToast({
+        title: '请登录后查看',
+        icon:'none'
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/my_publish/my_publish'
+      })
+    }
   },
   toFinished:function(){
     wx.navigateTo({

@@ -12,7 +12,8 @@ Page({
     watcher:null,
     icon:'',
     name:'',
-    value:''
+    value:'',
+    input:''
   },
 
   /**
@@ -70,17 +71,13 @@ Page({
     let time = hours.toString() + ':' + mins.toString();
     return time;
   },
-  // addData:function(newMessage){
-  //   let messages=this.data.list.messages;
-  //   messages.push(newMessage);
-  //   console.log(messages);
-  //   return messages
-  // },
+  valueUpdate:function(e){
+    //输入一次就更新数据
+    this.setData({
+      input:e.detail.value
+    })
+  },
   sendConfirm:function(){
-    let sq = wx.createSelectorQuery();
-    sq.select(".message_area").fields({
-      properties: ['value']
-    }, res => {
       const db = wx.cloud.database();
       const _=db.command;
       const { collection, openid, icon, name ,id } = this.data;
@@ -93,7 +90,7 @@ Page({
       }
       let date=this.getDate();
       let time=this.getTime();
-      let content=res.value;
+      let content=this.data.input;
       //通过commond操作符来添加数据，update试过，云函数也试过但没起效,后面察觉是没有插入openid所以没有修改权限
       db.collection(collection).where({
         _id:id
@@ -115,7 +112,6 @@ Page({
           })
         }
       })
-    }).exec();
     //输入框
     this.setData({
       value: ''
@@ -143,9 +139,7 @@ Page({
       }).watch({
         onChange: snapshot=>{
           this.getData(this.pageScrollToBottom,this.clearUnread);
-          console.log('docs\'s changed events', snapshot.docChanges)
-          console.log('query result snapshot after the event', snapshot.docs)
-          console.log('is init data', snapshot.type === 'init')
+          console.log('chat监听开始')
         },
         onError: function (err) {
           console.error('the watch closed because of error', err)

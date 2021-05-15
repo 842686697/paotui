@@ -8,6 +8,6 @@
   <view class="time_right"></view>
 </view>
 <view class="message_box">
-  <input class="message_area" cursor-spacing="10" value="{{value}}"></input>
+  <input class="message_area" cursor-spacing="10" value="{{value}}" bindinput="valueUpdate"></input>
   <view class="message_button" bindtap="sendConfirm">发送</view>
 </view>

@@ -13,13 +13,14 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2ECCFA",
-    "navigationBarTitleText": "计科失物招领",
+    "navigationBarTitleText": "快寻",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
-    "selectedColor":"#24af08",
+    "selectedColor":"#2ECCFA",
+    "color":"#bfbfbf",
     "list": [
       {
         "pagePath": "pages/list/list",
