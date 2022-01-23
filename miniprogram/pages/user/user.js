@@ -16,6 +16,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  //点击按钮弹出登陆授权弹窗
   register:function(e){
     console.log(e)
     if (!this.data.hasLogin && e.detail.userInfo) {
@@ -34,6 +35,7 @@ Page({
       })
     }
   },
+  //跳转至my_publish
   toMyPublish:function(){
     if (!this.data.userInfo){
       wx.showToast({
@@ -46,11 +48,7 @@ Page({
       })
     }
   },
-  toFinished:function(){
-    wx.navigateTo({
-      url:'/pages/finished/finished'
-    })
-  },
+  //调用云函数获取openid
   getOpenid: function () {
     wx.cloud.callFunction({
       name: 'login',
@@ -59,6 +57,7 @@ Page({
       }
     })
   },
+  //先看app获取到用户信息没，如果有就直接用app的，没有就自己获取
   getAuth:function(){
     if (app.globalData.userInfo) {
       this.setData({
@@ -72,14 +71,11 @@ Page({
       wx.getSetting({
         success: res => {
           if (res.authSetting['scope.userInfo']) {
-            wx.getUserInfo({
+            //如果有授权，则获取用户信息
+            wx.getUserProfile({
+              desc: '登陆',
               success: res => {
-                this.setData({
-                  userInfo: res.userInfo,
-                  icon: res.userInfo.avatarUrl,
-                  nickName: res.userInfo.nickName,
-                  hasLogin: true
-                })
+                this.globalData.userInfo=res.userInfo
               }
             })
           }

@@ -19,14 +19,22 @@ App({
       userInfo:null,
       openid:''
     }
+    //获取授权状态
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
+          //如果有授权，则获取用户信息
+          wx.getUserProfile({
+            desc: '登陆',
             success: res => {
-              this.globalData.userInfo=res.userInfo;
+              this.globalData.userInfo=res.userInfo
             }
           })
+          // wx.getUserInfo({
+          //   success: res => {
+          //     this.globalData.userInfo=res.userInfo;
+          //   }
+          // })
         }
       }
     })

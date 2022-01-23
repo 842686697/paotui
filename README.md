@@ -1,12 +1,25 @@
-# 云开发 quickstart
+# 失物招领小程序
 
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+### 简介
 
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+>该项目是基于微信小程序和云开发所写出的微信小程序
 
-## 参考文档
+### 功能
 
-- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+* 发布失物/拾物功能，信息编辑功能
+* 与发布人联系并在小程序内聊天的功能
 
+### 安装运行
+
+    git clone https://github.com/842686697/paotui.git
+    cd paotui
+    npm run serve
+    
+    如果clone报错,就输入
+    git init
+    git config http.sslVerify "false"
+
+### 更新信息
+
+>已将登陆api更新至微信小程序官方于2021年04月15日发布的最新api
+>详见[微信小程序官方2021年04月15日公告](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)

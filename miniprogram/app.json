@@ -6,7 +6,6 @@
     "pages/details/details",
     "pages/publish/publish",
     "pages/my_publish/my_publish",
-    "pages/finished/finished",
     "pages/chat/chat"
   ],
   "window": {
