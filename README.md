@@ -14,10 +14,15 @@
     git clone https://github.com/842686697/paotui.git
     cd paotui
     npm run serve
-    
-    如果clone报错,就输入
+	
+	如果clone报错,就输入
     git init
     git config http.sslVerify "false"
+	
+### 注意事项
+
+	1.请将app.js中env修改为自己的云开发环境ID
+	2.请手动在云开发的数据库中创建message、list这两个集合
 
 ### 更新信息
 

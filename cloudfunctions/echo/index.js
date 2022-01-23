@@ -6,3 +6,4 @@ exports.main = async (event, context) => {
   delete event.userInfo
   return event
 }
+ 

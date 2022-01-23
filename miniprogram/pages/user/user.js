@@ -9,7 +9,7 @@ Page({
     icon:String,
     unLoginIcon:'/images/unloginIcon.png',
     hasLogin:false,
-    userInfo:null,
+    userInfo:Array,
     openId:app.globalData.openId
   },
 
@@ -17,23 +17,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   //点击按钮弹出登陆授权弹窗
-  register:function(e){
-    console.log(e)
-    if (!this.data.hasLogin && e.detail.userInfo) {
-      app.globalData.userInfo=e.detail.userInfo
-      console.log('app.globaldata:',app.globalData)
-      this.setData({
-        hasLogin: true,
-        icon: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo,
-        nickName:e.detail.userInfo.nickName
-      })
-    }else{
-      wx.showToast({
-        title: '已拒绝授权,无法登录',
-        icon:'none'
-      })
-    }
+  login:function(e){
+    wx.getUserProfile({
+      desc: '登陆',
+      success: res => {
+        let userInfo=res.userInfo;
+        app.globalData.userInfo=userInfo
+        console.log(userInfo)
+        this.setData({
+          hasLogin:true,
+          userInfo:userInfo,
+          icon:userInfo.avatarUrl,
+          nickName:userInfo.nickName
+        })
+      }
+    })
+    
   },
   //跳转至my_publish
   toMyPublish:function(){
@@ -68,17 +67,15 @@ Page({
       })
     }
     else {
-      wx.getSetting({
+      //获取用户信息
+      wx.getUserProfile({
+        desc: '登陆',
         success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            //如果有授权，则获取用户信息
-            wx.getUserProfile({
-              desc: '登陆',
-              success: res => {
-                this.globalData.userInfo=res.userInfo
-              }
-            })
-          }
+          app.globalData.userInfo=res.userInfo
+          this.setData({
+            hasLogin:true,
+            userInfo:res.userInfo
+          })
         }
       })
     }

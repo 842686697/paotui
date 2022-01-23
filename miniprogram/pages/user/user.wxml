@@ -4,7 +4,7 @@
     <view class="user_icon_box float- clearfix">
       <image src="{{hasLogin?icon:unLoginIcon}}" class="user_icon float-"></image>
       <block>
-        <button style="height:100rpx;width:200rpx;" class="user_button" open-type="getUserInfo" bindgetuserinfo="register" wx:if="{{!hasLogin}}" >登陆</button>
+        <button style="height:100rpx;width:200rpx;" class="user_button" bindtap="login" wx:if="{{!hasLogin}}" >登陆</button>
         <view class="user_name float-" wx:else>{{nickName}}</view>
       </block>
     </view>

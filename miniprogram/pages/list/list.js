@@ -33,21 +33,6 @@ Page({
         userInfo: app.globalData.userInfo
       })
     }
-    else {
-      wx.getSetting({
-        success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            wx.getUserInfo({
-              success: res => {
-                this.setData({
-                  userInfo: res.userInfo
-                })
-              }
-            })
-          }
-        }
-      })
-    }
   },
   confirmData:function(e){
     const db = wx.cloud.database();
@@ -130,7 +115,8 @@ Page({
         fail:res=>{
           wx.hideLoading();
           wx.showToast({
-            title: '连接失败'
+            title: '连接失败',
+            icon:'error'
           })
         }
       })
